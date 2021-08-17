@@ -1,1 +1,9 @@
 E:\C# workspace\New folder\RentingHouse\RentingHouse\bin\Debug\RentingHouse.exe.config
+E:\C# workspace\RentingHouse\RentingHouse\bin\Debug\RentingHouse.exe.config
+E:\C# workspace\RentingHouse\RentingHouse\bin\Debug\RentingHouse.exe
+E:\C# workspace\RentingHouse\RentingHouse\bin\Debug\RentingHouse.pdb
+E:\C# workspace\RentingHouse\RentingHouse\obj\Debug\RentingHouse.csprojResolveAssemblyReference.cache
+E:\C# workspace\RentingHouse\RentingHouse\obj\Debug\RentingHouse.Properties.Resources.resources
+E:\C# workspace\RentingHouse\RentingHouse\obj\Debug\RentingHouse.csproj.GenerateResource.Cache
+E:\C# workspace\RentingHouse\RentingHouse\obj\Debug\RentingHouse.exe
+E:\C# workspace\RentingHouse\RentingHouse\obj\Debug\RentingHouse.pdb
