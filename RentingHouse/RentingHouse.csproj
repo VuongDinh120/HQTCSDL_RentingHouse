@@ -48,6 +48,15 @@
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DTO\Booking.cs" />
+    <Compile Include="DTO\BookingDetail.cs" />
+    <Compile Include="DTO\Contract.cs" />
+    <Compile Include="DTO\District.cs" />
+    <Compile Include="DTO\Fee.cs" />
+    <Compile Include="DTO\House.cs" />
+    <Compile Include="DTO\Role.cs" />
+    <Compile Include="DTO\Survey.cs" />
+    <Compile Include="DTO\Transaction.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="fAccount.cs">
       <SubType>Form</SubType>

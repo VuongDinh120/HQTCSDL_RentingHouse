@@ -11,8 +11,9 @@ namespace RentingHouse.DTO
     public class User
     {
         //Các phương thức khởi tạo
-        public User(string userName, string fullName, string dob, string phone, string idCard, string role, string password = null) //tham số passWord  khai báo optional, có gtri mặc định null nên để cuối hàng
+        public User(string id,string userName, string fullName, string dob, string phone, string idCard, string role, string password = null) //tham số passWord  khai báo optional, có gtri mặc định null nên để cuối hàng
         {
+            this.Id = id;
             this.UserName = userName;
             this.FullName = fullName;
             this.Dob = dob;
@@ -24,6 +25,7 @@ namespace RentingHouse.DTO
 
         public User(DataRow row)
         {
+            this.Id = row["id"].ToString();
             this.UserName = row["user_name"].ToString();
             this.Password = row["password"].ToString();
             this.FullName = row["full_name"].ToString();
@@ -35,6 +37,7 @@ namespace RentingHouse.DTO
 
         // Khai báo thuộc tính
         //Khai báo hết tất cả thuộc tính rồi CTRL+R+E nó tự động xuất ra các phương thức get set
+        private string id;
         private string userName;
         private string password;
         private string fullName;
@@ -132,6 +135,19 @@ namespace RentingHouse.DTO
             set
             {
                 role = value;
+            }
+        }
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
             }
         }
     }
