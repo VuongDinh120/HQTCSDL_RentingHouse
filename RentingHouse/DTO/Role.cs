@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class Role
     {
         //
-        public Role(string id, string type)
+        public Role(int id, string type)
         {
             this.Id = id;
             this.Type = type;
@@ -18,18 +18,18 @@ namespace RentingHouse.DTO
 
         public Role(DataRow row)
         {
-            this.Id = row["id"].ToString();
-            this.Type = row["type"].ToString();
+            this.Id = (int)row["id"];
+            this.Type = row["r_type"].ToString();
            
         }
 
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private string type;
 
         //
-        public string Id
+        public int Id
         {
             get
             {

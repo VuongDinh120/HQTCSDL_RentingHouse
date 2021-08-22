@@ -11,7 +11,7 @@ namespace RentingHouse.DTO
     {
         
 
-        public Contract(string houseId, DateTime beginDate, DateTime endDate,float fee, int order = 1)
+        public Contract(int houseId, DateTime beginDate, DateTime endDate,float fee, int order = 1)
         {
             this.HouseId = houseId;
             this.Order = order;
@@ -22,15 +22,15 @@ namespace RentingHouse.DTO
 
         public Contract(DataRow row)
         {
-            this.HouseId = row["house_id"].ToString();
-            this.Order = (int)row["order"];
+            this.HouseId = (int)row["house_id"];
+            this.Order = (int)row["c_order"];
             this.BeginDate = (DateTime)row["begin_date"];
             this.EndDate = (DateTime)row["end_date"];
             this.Fee = (float)row["fee"];
         }
 
         // Khai báo thuộc tính
-        private string houseId;
+        private int houseId;
         private int order;
         private DateTime beginDate;
         private DateTime endDate;
@@ -39,7 +39,7 @@ namespace RentingHouse.DTO
 
 
 
-        public string HouseId
+        public int HouseId
         {
             get
             {

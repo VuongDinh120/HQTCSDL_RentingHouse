@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class House
     {
 
-        public House(string id,Decimal area, float retal, int numberPeople, string address, string district, string description,string addInfo,string status, string reason, string owner) 
+        public House(int id,Decimal area, float retal, int numberPeople, string address, int district, string description,string addInfo,string status, string reason, int owner) 
         {
             this.Id = id;
             this.Area = area;
@@ -27,32 +27,32 @@ namespace RentingHouse.DTO
 
         public House(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.Area = (Decimal)row["area"];
             this.Rental = (int)row["rental"];
             this.NumberPeople = (int)row["number_people"];
-            this.Address = row["address"].ToString();
-            this.District = row["district"].ToString();
-            this.Description = row["description"].ToString();
-            this.AddInfo = row["add_info"].ToString(); ;
-            this.Status = row["status"].ToString(); ;
+            this.Address = row["h_address"].ToString();
+            this.District = (int)row["district_id"];
+            this.Description = row["h_description"].ToString();
+            this.AddInfo = row["h_add_info"].ToString(); ;
+            this.Status = row["h_status"].ToString(); ;
             this.Reason = row["reason"].ToString(); ;
-            this.Owner = row["user_id"].ToString(); ;
+            this.Owner = (int)row["h_user_id"]; ;
         }
 
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private Decimal area;
         private float rental;
         private int numberPeople;
         private string address;
-        private string district;
         private string description;
         private string addInfo;
         private string status;
         private string reason;
-        private string owner;
+        private int district;
+        private int owner;
 
 
         // get,set
@@ -108,7 +108,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string District
+        public int District
         {
             get
             {
@@ -173,7 +173,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string Owner
+        public int Owner
         {
             get
             {
@@ -186,7 +186,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string Id
+        public int Id
         {
             get
             {

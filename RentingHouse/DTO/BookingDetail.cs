@@ -10,38 +10,39 @@ namespace RentingHouse.DTO
     public class BookingDetail
     {
 
-        public BookingDetail(string bookingId, string houseId, DateTime meetTime, string meetAddress, string meetPhone, bool isRented, string feedback)
+        public BookingDetail(int bookingId, int houseId, DateTime meetTime, string meetAddress, string meetPhone, int isRented, string feedback)
         {
             this.BookingId = bookingId;
             this.HouseId = houseId;
             this.MeetTime = meetTime;
             this.MeetAddress = meetAddress;
-            this.MeetPhone = meetPhone;
+            this.IsRented = isRented;
             this.Feedback = feedback;
         }
 
         public BookingDetail(DataRow row)
         {
-            this.BookingId = row["booking_id"].ToString();
-            this.HouseId = row["house_id"].ToString();
+            this.BookingId = (int)row["booking_id"];
+            this.HouseId = (int)row["house_id"];
             this.MeetTime = (DateTime)row["meet_time"];
             this.MeetAddress = row["meet_address"].ToString();
             this.MeetPhone = row["meet_phone"].ToString();
+            this.IsRented = (int)row["is_rented"];
             this.Feedback = row["feedback"].ToString();
         }
 
         // Khai báo thuộc tính
-        private string bookingId;
-        private string houseId;
+        private int bookingId;
+        private int houseId;
         private DateTime meetTime;
         private string meetAddress;
         private string meetPhone;
-        private bool isRented;
+        private int isRented;
         private string feedback;
 
 
 
-        public string BookingId
+        public int BookingId
         {
             get
             {
@@ -54,7 +55,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string HouseId
+        public int HouseId
         {
             get
             {
@@ -106,7 +107,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public bool IsRented
+        public int IsRented
         {
             get
             {

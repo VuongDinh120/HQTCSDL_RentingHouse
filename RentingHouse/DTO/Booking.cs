@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class Booking
     {
 
-        public Booking(string id, DateTime beginDate, DateTime endDate, DateTime receiveDate) 
+        public Booking(int id, DateTime beginDate, DateTime endDate, DateTime receiveDate, string status, int numberHouse, float rentFee, float liabilityFee, int userId) 
         {
             this.Id = id;
             this.BeginDate = beginDate;
@@ -25,19 +25,19 @@ namespace RentingHouse.DTO
 
         public Booking(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.BeginDate = (DateTime)row["begin_date"];
             this.EndDate = (DateTime)row["end_date"];
             this.ReceiveDate = (DateTime)row["received_date"];
-            this.Status = row["status"].ToString();
+            this.Status = row["b_status"].ToString();
             this.NumberHouse = (int)row["number_house"];
             this.RentFee = (int)row["rent_fee"];
             this.LiabilityFee = (int)row["liability_fee"];
-            this.UserId = row["user_id"].ToString();
+            this.UserId = (int)row["b_user_id"];
         }
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private DateTime beginDate;
         private DateTime endDate;
         private DateTime receiveDate;
@@ -45,10 +45,10 @@ namespace RentingHouse.DTO
         private int numberHouse;
         private float rentFee;
         private float liabilityFee;
-        private string userId;
+        private int userId;
 
 
-        public string Id
+        public int Id
         {
             get
             {
@@ -152,7 +152,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string UserId
+        public int UserId
         {
             get
             {

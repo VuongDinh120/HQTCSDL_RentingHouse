@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class Survey
     {
 
-        public Survey(string id,string detail, string status, string houseId, string userId) 
+        public Survey(int id,string detail, string status, int houseId, int userId) 
         {
             this.Id = id;
             this.Detail = detail;
@@ -21,19 +21,19 @@ namespace RentingHouse.DTO
 
         public Survey(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.Detail = row["detail"].ToString();
-            this.Status = row["status"].ToString();
-            this.HouseId = row["house_id"].ToString();
-            this.UserId = row["user_id"].ToString(); ;
+            this.Status = row["s_status"].ToString();
+            this.HouseId = (int)row["house_id"];
+            this.UserId = (int)row["s_user_id"]; ;
         }
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private string detail;
         private string status;
-        private string houseId;
-        private string userId;
+        private int houseId;
+        private int userId;
 
 
 
@@ -63,7 +63,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string HouseId
+        public int HouseId
         {
             get
             {
@@ -76,7 +76,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string UserId
+        public int UserId
         {
             get
             {
@@ -89,7 +89,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string Id
+        public int Id
         {
             get
             {

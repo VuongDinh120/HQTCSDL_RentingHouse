@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class Fee
     {
 
-        public Fee(string id, string name, float price)
+        public Fee(int id, string name, float price)
         {
             this.Id = id;
             this.Name = name;
@@ -19,7 +19,7 @@ namespace RentingHouse.DTO
 
         public Fee(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.Name = row["name"].ToString();
             this.Price = (float)row["price"];
         }
@@ -27,12 +27,12 @@ namespace RentingHouse.DTO
 
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private string name;
         private float price;
 
 
-        public string Id
+        public int Id
         {
             get
             {

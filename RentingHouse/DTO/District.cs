@@ -11,7 +11,7 @@ namespace RentingHouse.DTO
     {
       
 
-        public District(string id, string name)
+        public District(int id, string name)
         {
             this.Id = id;
             this.Name = name;
@@ -19,17 +19,17 @@ namespace RentingHouse.DTO
 
         public District(DataRow row)
         {
-            this.Id = row["id"].ToString();
+            this.Id = (int)row["id"];
             this.Name = row["name"].ToString();
 
         }
 
         // Khai báo thuộc tính
-        private string id;
+        private int id;
         private string name;
     
         // get,set
-        public string Id
+        public int Id
         {
             get
             {
