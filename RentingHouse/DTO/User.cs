@@ -11,37 +11,43 @@ namespace RentingHouse.DTO
     public class User
     {
         //Các phương thức khởi tạo
-        public User(string userName, string fullName, string dob, string phone, string idCard, string role, string password = null) //tham số passWord  khai báo optional, có gtri mặc định null nên để cuối hàng
+        public User(int id,string userName, string fullName, string dob, string phone, string idCard, float balance, int role, string password = null) //tham số passWord  khai báo optional, có gtri mặc định null nên để cuối hàng
         {
+            this.Id = id;
             this.UserName = userName;
             this.FullName = fullName;
             this.Dob = dob;
             this.Phone = phone;
             this.IdCard = idCard;
+            this.Balance = balance;
             this.Role = role;
             this.Password = password;
         }
 
         public User(DataRow row)
         {
-            this.UserName = row["user_name"].ToString();
-            this.Password = row["password"].ToString();
-            this.FullName = row["full_name"].ToString();
+            this.Id = (int)row["id"];
+            this.UserName = row["username"].ToString().Trim();
+            this.Password = row["u_password"].ToString().Trim();
+            this.FullName = row["fullname"].ToString().Trim();
             this.Dob = row["dob"].ToString();
-            this.Phone = row["phone"].ToString();
-            this.IdCard = row["id_card"].ToString();
-            this.Role = row["role"].ToString();
+            this.Phone = row["phone"].ToString().Trim();
+            this.IdCard = row["id_card"].ToString().Trim();
+            this.Balance = (float)Convert.ToDouble(row["account_balance"].ToString());
+            this.Role = (int)row["role_id"];
         }
 
         // Khai báo thuộc tính
         //Khai báo hết tất cả thuộc tính rồi CTRL+R+E nó tự động xuất ra các phương thức get set
+        private int id;
         private string userName;
         private string password;
         private string fullName;
         private string dob;
         private string phone;
         private string idCard;
-        private string role;
+        private float balance;
+        private int role;
 
         //các phương thức get set
         public string UserName
@@ -122,7 +128,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public string Role
+        public int Role
         {
             get
             {
@@ -132,6 +138,32 @@ namespace RentingHouse.DTO
             set
             {
                 role = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public float Balance
+        {
+            get
+            {
+                return balance;
+            }
+
+            set
+            {
+                balance = value;
             }
         }
     }

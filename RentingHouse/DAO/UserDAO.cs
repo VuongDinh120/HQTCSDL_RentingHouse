@@ -29,19 +29,59 @@ namespace RentingHouse.DAO
         // 1 - ExecuteQuery : thực thi truy vấn có trả về dữ liệu (SELECT)
         // 1 - ExecuteNonQuery : thực thi truy vấn trả dữ liệu 0-Fail,1-Success (INSERT, UPDATE, DELETE)
         // 1 - ExecuteScalar  : thực thi truy vấn trả về là data của cột đầu tiên ở dòng đầu tiên (INSERT, UPDATE, DELETE) thường dùng để lấy id của dữ liệu sau truy vấn
-        public bool Login(string userName, string passWord)
+        public User Login(string userName, string passWord)
         {
+            User user = null;
 
             string query = "USP_Login @userName , @passWord";// cấu truy vấn gọi procedure
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
 
-            return result.Rows.Count > 0;
+            foreach (DataRow item in data.Rows)
+            {
+                user = new User(item);
+                return user;
+            }
+
+            return user;
         }
 
-        public bool UpdateAccount(string userName, string fullName, string pass, string newPass)
+        public User GetUserById(int id)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, fullName, pass, newPass });
+            User user = null;
+
+            string query = string.Format("SELECT * FROM dbo.users WHERE id = {0}", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                user = new User(item);
+                return user;
+            }
+
+            return user;
+        }
+
+        public bool UpdateAccount(User user)
+        {
+            //Sài query proc phải để param cách nhau như thế này "@a , @b" ko là bị lỗi
+            int result = DataProvider.Instance.ExecuteNonQuery("USP_UpdateAccountInfo @id , @username , @fullname , @dob , @phone , @idCard", new object[] { user.Id, user.UserName, user.FullName, user.Dob, user.Phone, user.IdCard });
+
+            return result > 0;
+        }
+
+        public bool UpdatePassword(int id, string newpass)
+        {
+            string query=string.Format("UPDATE dbo.users SET u_password = N'{0}' WHERE id = {1}", newpass, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateBalance(int id, float newBalance)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("USP_UpdateBalance @id , @balance", new object[] {id,newBalance});
 
             return result > 0;
         }
