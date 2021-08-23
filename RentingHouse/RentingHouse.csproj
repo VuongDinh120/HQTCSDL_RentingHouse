@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BookingDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HouseDAO.cs" />
+    <Compile Include="DAO\RoleDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DTO\Booking.cs" />
     <Compile Include="DTO\BookingDetail.cs" />

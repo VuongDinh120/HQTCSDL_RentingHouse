@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using RentingHouse.DAO;
+using RentingHouse.DTO;
+
 namespace RentingHouse
 {
     public partial class Dashboard : Form
@@ -25,10 +28,19 @@ namespace RentingHouse
             int nHeightEllipse
         );
 
+        private User loginUser;
 
-        public Dashboard()
+        public User LoginUser
+        {
+            get{return loginUser;}
+            set{loginUser = value;}
+        }
+
+        public Dashboard(User user)
         {
             InitializeComponent();
+            LoginUser = user;
+            //Design
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = btnHouses.Height;
             pnlNav.Top = btnHouses.Top;
@@ -45,7 +57,8 @@ namespace RentingHouse
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            label1.Text = loginUser.UserName;
+            label2.Text = RoleDAO.Instance.GetRoleNameById(loginUser.Role);
         }
 
         private void btnHouses_Click(object sender, EventArgs e)
@@ -65,13 +78,14 @@ namespace RentingHouse
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
+            //design
             pnlNav.Height = btnAccount.Height;
             pnlNav.Top = btnAccount.Top;
             btnAccount.BackColor = Color.FromArgb(46, 51, 73);
 
             lblTitle.Text = "Thông tin tài khoản";
             this.pnlFormHouses.Controls.Clear();
-            fAccount frmDashboard = new fAccount() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fAccount frmDashboard = new fAccount(LoginUser) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();

@@ -29,19 +29,27 @@ namespace RentingHouse.DAO
         // 1 - ExecuteQuery : thực thi truy vấn có trả về dữ liệu (SELECT)
         // 1 - ExecuteNonQuery : thực thi truy vấn trả dữ liệu 0-Fail,1-Success (INSERT, UPDATE, DELETE)
         // 1 - ExecuteScalar  : thực thi truy vấn trả về là data của cột đầu tiên ở dòng đầu tiên (INSERT, UPDATE, DELETE) thường dùng để lấy id của dữ liệu sau truy vấn
-        public bool Login(string userName, string passWord)
+        public User Login(string userName, string passWord)
         {
+            User user = null;
 
             string query = "USP_Login @userName , @passWord";// cấu truy vấn gọi procedure
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
 
-            return result.Rows.Count > 0;
+            foreach (DataRow item in data.Rows)
+            {
+                user = new User(item);
+                return user;
+            }
+
+            return user;
         }
 
-        public bool UpdateAccount(string userName, string fullName, string pass, string newPass)
+        public bool UpdateAccount(User user)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, fullName, pass, newPass });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccountInfo @id, @username, @fullname, @dob, @phone, @idCard", 
+                                new object[] { user.Id,user.UserName, user.FullName, user.Dob, user.Phone, user.IdCard });
 
             return result > 0;
         }

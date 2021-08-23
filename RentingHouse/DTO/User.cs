@@ -27,13 +27,13 @@ namespace RentingHouse.DTO
         public User(DataRow row)
         {
             this.Id = (int)row["id"];
-            this.UserName = row["user_name"].ToString();
+            this.UserName = row["username"].ToString();
             this.Password = row["u_password"].ToString();
             this.FullName = row["fullname"].ToString();
             this.Dob = row["dob"].ToString();
             this.Phone = row["phone"].ToString();
             this.IdCard = row["id_card"].ToString();
-            this.Balance = (int)row["account_balance"];
+            this.Balance = (float)Convert.ToDouble(row["account_balance"].ToString());
             this.Role = (int)row["role_id"];
         }
 

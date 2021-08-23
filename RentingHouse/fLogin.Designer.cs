@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lb_register = new System.Windows.Forms.Label();
+            this.btn_login = new System.Windows.Forms.Button();
             this.checkbxShowPass = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,36 +45,36 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(90, 380);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(132, 16);
+            this.label6.Size = new System.Drawing.Size(163, 19);
             this.label6.TabIndex = 15;
             this.label6.Text = "Chưa có tài khoản?";
             // 
-            // label4
+            // lb_register
             // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.label4.Location = new System.Drawing.Point(119, 410);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Đăng Ký";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lb_register.AutoSize = true;
+            this.lb_register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.lb_register.Location = new System.Drawing.Point(119, 410);
+            this.lb_register.Name = "lb_register";
+            this.lb_register.Size = new System.Drawing.Size(76, 19);
+            this.lb_register.TabIndex = 4;
+            this.lb_register.Text = "Đăng Ký";
+            this.lb_register.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button1
+            // btn_login
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(52, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ĐĂNG NHẬP";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_login.FlatAppearance.BorderSize = 0;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.ForeColor = System.Drawing.Color.White;
+            this.btn_login.Location = new System.Drawing.Point(52, 330);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(216, 35);
+            this.btn_login.TabIndex = 3;
+            this.btn_login.Text = "ĐĂNG NHẬP";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // checkbxShowPass
             // 
@@ -83,7 +83,7 @@
             this.checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkbxShowPass.Location = new System.Drawing.Point(152, 283);
             this.checkbxShowPass.Name = "checkbxShowPass";
-            this.checkbxShowPass.Size = new System.Drawing.Size(116, 20);
+            this.checkbxShowPass.Size = new System.Drawing.Size(139, 23);
             this.checkbxShowPass.TabIndex = 2;
             this.checkbxShowPass.Text = "Hiện mật khẩu";
             this.checkbxShowPass.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.label5.Location = new System.Drawing.Point(49, 212);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mật khẩu";
             // 
@@ -128,7 +128,7 @@
             this.label2.Location = new System.Drawing.Point(49, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.Size = new System.Drawing.Size(126, 19);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên đăng nhập";
             // 
@@ -140,7 +140,7 @@
             this.label1.Location = new System.Drawing.Point(51, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 31);
+            this.label1.Size = new System.Drawing.Size(285, 40);
             this.label1.TabIndex = 6;
             this.label1.Text = "Quản Lý Phòng Trọ";
             // 
@@ -159,14 +159,14 @@
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(330, 489);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lb_register);
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.checkbxShowPass);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
@@ -187,8 +187,8 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lb_register;
+        private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.CheckBox checkbxShowPass;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;

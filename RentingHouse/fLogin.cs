@@ -20,33 +20,6 @@ namespace RentingHouse
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Connect to DB
-            //string login = "SELECT * FROM USERS WHERE username= '" + txtUsername.Text + "' and password= '" + txtPassword.Text + "'";
-
-            // Validate
-
-            if (txtUsername.Text == "Hoang" && txtPassword.Text == "123")
-            {
-                int userRoleId = 1;
-
-                if (userRoleId == 1)
-                {
-                    new Dashboard().Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu, vui lòng thử lại", "Đăng Nhập Thất Bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtUsername.Focus();
-            }
-            
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
             new fRegister().Show();
@@ -68,6 +41,39 @@ namespace RentingHouse
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+
+            User user = UserDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
+
+            // Validate
+            if (user!=null)
+            {
+                int role = user.Role;
+                switch (role){
+                    case 1:
+                        new Dashboard(user).Show();
+                        break;
+                    case 2:
+                        // code block
+                        break;
+                    case 3:
+                        // code block
+                        break;
+                    default:
+                        break;
+                }
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu, vui lòng thử lại", "Đăng Nhập Thất Bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Text = "";
+                txtPassword.Text = "";
+                txtUsername.Focus();
+            }
         }
     }
 }

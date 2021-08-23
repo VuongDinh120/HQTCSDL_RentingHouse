@@ -21,7 +21,7 @@ namespace RentingHouse.DAO
         private DataProvider() { }
         
         //Chuỗi kết nối DB SQL Server
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLTN;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
