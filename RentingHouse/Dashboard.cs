@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
 using RentingHouse.DAO;
 using RentingHouse.DTO;
 
@@ -38,6 +37,7 @@ namespace RentingHouse
 
         public Dashboard(User user)
         {
+
             InitializeComponent();
             LoginUser = user;
             //Design

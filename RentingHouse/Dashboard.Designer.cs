@@ -167,7 +167,7 @@
             this.pnlFormHouses.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormHouses.Location = new System.Drawing.Point(186, 100);
             this.pnlFormHouses.Name = "pnlFormHouses";
-            this.pnlFormHouses.Size = new System.Drawing.Size(765, 477);
+            this.pnlFormHouses.Size = new System.Drawing.Size(1055, 477);
             this.pnlFormHouses.TabIndex = 1;
             // 
             // lblTitle
@@ -186,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.ClientSize = new System.Drawing.Size(1241, 577);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlFormHouses);
             this.Controls.Add(this.panel1);
