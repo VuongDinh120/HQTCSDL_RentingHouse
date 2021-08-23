@@ -45,7 +45,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(90, 380);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(163, 19);
+            this.label6.Size = new System.Drawing.Size(132, 16);
             this.label6.TabIndex = 15;
             this.label6.Text = "Chưa có tài khoản?";
             // 
@@ -56,7 +56,7 @@
             this.lb_register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
             this.lb_register.Location = new System.Drawing.Point(119, 410);
             this.lb_register.Name = "lb_register";
-            this.lb_register.Size = new System.Drawing.Size(76, 19);
+            this.lb_register.Size = new System.Drawing.Size(61, 16);
             this.lb_register.TabIndex = 4;
             this.lb_register.Text = "Đăng Ký";
             this.lb_register.Click += new System.EventHandler(this.label4_Click);
@@ -83,7 +83,7 @@
             this.checkbxShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkbxShowPass.Location = new System.Drawing.Point(152, 283);
             this.checkbxShowPass.Name = "checkbxShowPass";
-            this.checkbxShowPass.Size = new System.Drawing.Size(139, 23);
+            this.checkbxShowPass.Size = new System.Drawing.Size(116, 20);
             this.checkbxShowPass.TabIndex = 2;
             this.checkbxShowPass.Text = "Hiện mật khẩu";
             this.checkbxShowPass.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.label5.Location = new System.Drawing.Point(49, 212);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mật khẩu";
             // 
@@ -128,7 +128,7 @@
             this.label2.Location = new System.Drawing.Point(49, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 19);
+            this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Tên đăng nhập";
             // 
@@ -140,7 +140,7 @@
             this.label1.Location = new System.Drawing.Point(51, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 40);
+            this.label1.Size = new System.Drawing.Size(229, 31);
             this.label1.TabIndex = 6;
             this.label1.Text = "Quản Lý Phòng Trọ";
             // 
@@ -159,7 +159,8 @@
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AcceptButton = this.btn_login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(330, 489);
