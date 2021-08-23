@@ -20,6 +20,12 @@ namespace RentingHouse.DAO
 
         private HouseDAO() { }
 
+        public DataTable GetAllHouses()
+        {
+            string query = string.Format("SELECT h.*, d.name, u.fullname FROM dbo.houses h JOIN dbo.districts d ON h.district_id = d.id JOIN dbo.users u ON h.h_user_id = u.id");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public House GetHouseById(int id)
         {
             House house = null;

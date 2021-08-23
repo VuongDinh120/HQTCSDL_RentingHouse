@@ -2,7 +2,7 @@
 GO
 
 INSERT INTO districts(name)
-VALUES (N'Tân Phú'),(N'1'),(N'5'),(N'Thủ Đức'),(N'Tân Bình')
+VALUES (N'Tân Phú'),(N'Q.1'),(N'Q.5'),(N'Thủ Đức'),(N'Tân Bình')
 GO
 
 INSERT INTO roles(r_type)
