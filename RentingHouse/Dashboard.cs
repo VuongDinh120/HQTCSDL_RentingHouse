@@ -57,6 +57,7 @@ namespace RentingHouse
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            LoginUser = UserDAO.Instance.GetUserById(loginUser.Id);
             label1.Text = loginUser.UserName;
             label2.Text = RoleDAO.Instance.GetRoleNameById(loginUser.Role);
         }
@@ -85,7 +86,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Thông tin tài khoản";
             this.pnlFormHouses.Controls.Clear();
-            fAccount frmDashboard = new fAccount(LoginUser) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fAccount frmDashboard = new fAccount(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();

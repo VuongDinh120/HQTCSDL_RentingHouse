@@ -202,6 +202,7 @@
             this.btn_update_user.TabIndex = 4;
             this.btn_update_user.Text = "Cập nhật thông tin";
             this.btn_update_user.UseVisualStyleBackColor = true;
+            this.btn_update_user.Click += new System.EventHandler(this.btn_update_user_Click);
             // 
             // btn_update_password
             // 
@@ -211,6 +212,7 @@
             this.btn_update_password.TabIndex = 4;
             this.btn_update_password.Text = "Cập nhật mật khẩu";
             this.btn_update_password.UseVisualStyleBackColor = true;
+            this.btn_update_password.Click += new System.EventHandler(this.btn_update_password_Click);
             // 
             // label10
             // 
@@ -236,6 +238,7 @@
             this.btn_update_balance.TabIndex = 4;
             this.btn_update_balance.Text = "Nạp tiền";
             this.btn_update_balance.UseVisualStyleBackColor = true;
+            this.btn_update_balance.Click += new System.EventHandler(this.btn_update_balance_Click);
             // 
             // fAccount
             // 

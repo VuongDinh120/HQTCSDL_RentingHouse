@@ -46,10 +46,42 @@ namespace RentingHouse.DAO
             return user;
         }
 
+        public User GetUserById(int id)
+        {
+            User user = null;
+
+            string query = string.Format("SELECT * FROM dbo.users WHERE id = {0}", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                user = new User(item);
+                return user;
+            }
+
+            return user;
+        }
+
         public bool UpdateAccount(User user)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccountInfo @id, @username, @fullname, @dob, @phone, @idCard", 
-                                new object[] { user.Id,user.UserName, user.FullName, user.Dob, user.Phone, user.IdCard });
+            //Sài query proc phải để param cách nhau như thế này "@a , @b" ko là bị lỗi
+            int result = DataProvider.Instance.ExecuteNonQuery("USP_UpdateAccountInfo @id , @username , @fullname , @dob , @phone , @idCard", new object[] { user.Id, user.UserName, user.FullName, user.Dob, user.Phone, user.IdCard });
+
+            return result > 0;
+        }
+
+        public bool UpdatePassword(int id, string newpass)
+        {
+            string query=string.Format("UPDATE dbo.users SET u_password = N'{0}' WHERE id = {1}", newpass, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateBalance(int id, float newBalance)
+        {
+            int result = DataProvider.Instance.ExecuteNonQuery("USP_UpdateBalance @id , @balance", new object[] {id,newBalance});
 
             return result > 0;
         }

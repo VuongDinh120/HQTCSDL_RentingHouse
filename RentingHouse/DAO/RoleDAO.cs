@@ -24,7 +24,7 @@ namespace RentingHouse.DAO
         {
             Role rolename = null;
 
-            string query = "SELECT * FROM dbo.roles WHERE id = " + id.ToString();
+            string query = string.Format("SELECT * FROM dbo.roles WHERE id = {0}", id);
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
