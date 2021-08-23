@@ -9,7 +9,7 @@ namespace RentingHouse.DTO
 {
     public class Transaction
     {
-        public Transaction(int id, DateTime datetime, float money, string feeId, string userId)
+        public Transaction(int id, string datetime, float money, string feeId, string userId)
         {
             this.Id = id;
             this.Datetime = datetime;
@@ -21,8 +21,8 @@ namespace RentingHouse.DTO
         public Transaction(DataRow row)
         {
             this.Id = (int)row["id"];
-            this.Datetime = (DateTime)row["t_datetime"];
-            this.Money = (int)row["t_money"];
+            this.Datetime = row["t_datetime"].ToString();
+            this.Money = (float)Convert.ToDouble(row["t_money"].ToString());
             this.FeeId = row["t_fee_id"].ToString();
             this.UserId = row["t_user_id"].ToString();
         }
@@ -31,7 +31,7 @@ namespace RentingHouse.DTO
 
         // Khai báo thuộc tính
         private int id;
-        private DateTime datetime;
+        private string datetime;
         private float money;
         private string feeId;
         private string userId;
@@ -50,7 +50,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public DateTime Datetime
+        public string Datetime
         {
             get
             {

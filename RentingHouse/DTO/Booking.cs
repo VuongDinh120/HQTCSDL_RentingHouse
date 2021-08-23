@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class Booking
     {
 
-        public Booking(int id, DateTime beginDate, DateTime endDate, DateTime receiveDate, string status, int numberHouse, float rentFee, float liabilityFee, int userId) 
+        public Booking(int id, string beginDate, string endDate, string receiveDate, string status, int numberHouse, float rentFee, float liabilityFee, int userId) 
         {
             this.Id = id;
             this.BeginDate = beginDate;
@@ -26,21 +26,21 @@ namespace RentingHouse.DTO
         public Booking(DataRow row)
         {
             this.Id = (int)row["id"];
-            this.BeginDate = (DateTime)row["begin_date"];
-            this.EndDate = (DateTime)row["end_date"];
-            this.ReceiveDate = (DateTime)row["received_date"];
+            this.BeginDate = row["begin_date"].ToString();
+            this.EndDate = row["end_date"].ToString();
+            this.ReceiveDate = row["received_date"].ToString();
             this.Status = row["b_status"].ToString();
             this.NumberHouse = (int)row["number_house"];
-            this.RentFee = (int)row["rent_fee"];
-            this.LiabilityFee = (int)row["liability_fee"];
+            this.RentFee = (float)Convert.ToDouble(row["rent_fee"].ToString());
+            this.LiabilityFee = (float)Convert.ToDouble(row["liability_fee"].ToString());
             this.UserId = (int)row["b_user_id"];
         }
 
         // Khai báo thuộc tính
         private int id;
-        private DateTime beginDate;
-        private DateTime endDate;
-        private DateTime receiveDate;
+        private string beginDate;
+        private string endDate;
+        private string receiveDate;
         private string status;
         private int numberHouse;
         private float rentFee;
@@ -61,7 +61,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public DateTime BeginDate
+        public string BeginDate
         {
             get
             {
@@ -74,7 +74,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public DateTime EndDate
+        public string EndDate
         {
             get
             {
@@ -87,7 +87,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public DateTime ReceiveDate
+        public string ReceiveDate
         {
             get
             {

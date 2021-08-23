@@ -29,7 +29,7 @@ namespace RentingHouse.DTO
         {
             this.Id = (int)row["id"];
             this.Area = (Decimal)row["area"];
-            this.Rental = (int)row["rental"];
+            this.Rental = (float)Convert.ToDouble(row["rental"].ToString());
             this.NumberPeople = (int)row["number_people"];
             this.Address = row["h_address"].ToString();
             this.District = (int)row["district_id"];

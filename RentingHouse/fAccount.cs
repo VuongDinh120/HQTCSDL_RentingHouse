@@ -112,8 +112,6 @@ namespace RentingHouse
                     message = "Nạp không thành công";
                 }
             }
-            txt_new_password.Text = "";
-            txt_new_password.Focus();
             string title = "Nạp tiền vào tài khoản";
             MessageBox.Show(message, title);
         }

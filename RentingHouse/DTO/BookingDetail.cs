@@ -10,7 +10,7 @@ namespace RentingHouse.DTO
     public class BookingDetail
     {
 
-        public BookingDetail(int bookingId, int houseId, DateTime meetTime, string meetAddress, string meetPhone, int isRented, string feedback)
+        public BookingDetail(int bookingId, int houseId, string meetTime, string meetAddress, string meetPhone, int isRented, string feedback)
         {
             this.BookingId = bookingId;
             this.HouseId = houseId;
@@ -24,7 +24,7 @@ namespace RentingHouse.DTO
         {
             this.BookingId = (int)row["booking_id"];
             this.HouseId = (int)row["house_id"];
-            this.MeetTime = (DateTime)row["meet_time"];
+            this.MeetTime = row["meet_time"].ToString();
             this.MeetAddress = row["meet_address"].ToString();
             this.MeetPhone = row["meet_phone"].ToString();
             this.IsRented = (int)row["is_rented"];
@@ -34,7 +34,7 @@ namespace RentingHouse.DTO
         // Khai báo thuộc tính
         private int bookingId;
         private int houseId;
-        private DateTime meetTime;
+        private string meetTime;
         private string meetAddress;
         private string meetPhone;
         private int isRented;
@@ -68,7 +68,7 @@ namespace RentingHouse.DTO
             }
         }
 
-        public DateTime MeetTime
+        public string MeetTime
         {
             get
             {

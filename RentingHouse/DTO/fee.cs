@@ -21,7 +21,7 @@ namespace RentingHouse.DTO
         {
             this.Id = (int)row["id"];
             this.Name = row["name"].ToString();
-            this.Price = (float)row["price"];
+            this.Price = (float)Convert.ToDouble(row["price"].ToString());
         }
 
 
