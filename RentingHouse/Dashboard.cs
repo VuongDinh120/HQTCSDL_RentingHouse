@@ -49,7 +49,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Danh sách nhà";
             this.pnlFormHouses.Controls.Clear();
-            fHouses frmDashboard = new fHouses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fHouses frmDashboard = new fHouses(loginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -71,7 +71,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Danh sách nhà";
             this.pnlFormHouses.Controls.Clear();
-            fHouses frmDashboard = new fHouses() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fHouses frmDashboard = new fHouses(loginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();

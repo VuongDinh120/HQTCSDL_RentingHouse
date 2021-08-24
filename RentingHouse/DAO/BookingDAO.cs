@@ -33,7 +33,6 @@ namespace RentingHouse.DAO
                 b = new Booking(item);
                 return b;
             }
-
             return b;
         }
 

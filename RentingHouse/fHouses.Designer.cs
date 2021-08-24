@@ -34,11 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvHouses = new System.Windows.Forms.DataGridView();
+            this.btn_rentHouse = new System.Windows.Forms.Button();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_district_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rental = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_number_people = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_checkbox_houses = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textBox1.Location = new System.Drawing.Point(751, 12);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(389, 31);
@@ -85,7 +87,8 @@
             this.col_district_name,
             this.col_area,
             this.col_rental,
-            this.col_number_people});
+            this.col_number_people,
+            this.col_checkbox_houses});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,12 +100,21 @@
             this.dgvHouses.EnableHeadersVisualStyles = false;
             this.dgvHouses.Location = new System.Drawing.Point(12, 60);
             this.dgvHouses.Name = "dgvHouses";
-            this.dgvHouses.ReadOnly = true;
             this.dgvHouses.RowHeadersVisible = false;
             this.dgvHouses.RowTemplate.Height = 50;
             this.dgvHouses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHouses.Size = new System.Drawing.Size(1107, 405);
             this.dgvHouses.TabIndex = 5;
+            // 
+            // btn_rentHouse
+            // 
+            this.btn_rentHouse.Location = new System.Drawing.Point(958, 12);
+            this.btn_rentHouse.Name = "btn_rentHouse";
+            this.btn_rentHouse.Size = new System.Drawing.Size(146, 31);
+            this.btn_rentHouse.TabIndex = 6;
+            this.btn_rentHouse.Text = "Đăng ký thuê";
+            this.btn_rentHouse.UseVisualStyleBackColor = true;
+            this.btn_rentHouse.Click += new System.EventHandler(this.btn_rentHouse_Click);
             // 
             // col_id
             // 
@@ -142,12 +154,20 @@
             this.col_number_people.Name = "col_number_people";
             this.col_number_people.ReadOnly = true;
             // 
+            // col_checkbox_houses
+            // 
+            this.col_checkbox_houses.FalseValue = "F";
+            this.col_checkbox_houses.HeaderText = "Chọn nhà";
+            this.col_checkbox_houses.Name = "col_checkbox_houses";
+            this.col_checkbox_houses.TrueValue = "T";
+            // 
             // fHouses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1131, 477);
+            this.Controls.Add(this.btn_rentHouse);
             this.Controls.Add(this.dgvHouses);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -165,10 +185,12 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dgvHouses;
+        private System.Windows.Forms.Button btn_rentHouse;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_district_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_area;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rental;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_number_people;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col_checkbox_houses;
     }
 }

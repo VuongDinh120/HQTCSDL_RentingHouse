@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DAO\BookingDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\FeeDAO.cs" />
     <Compile Include="DAO\HouseDAO.cs" />
     <Compile Include="DAO\RoleDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
@@ -91,6 +92,12 @@
     <Compile Include="fRegister.Designer.cs">
       <DependentUpon>fRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="fRegisterRentHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRegisterRentHouse.Designer.cs">
+      <DependentUpon>fRegisterRentHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dashboard.resx">
@@ -107,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fRegister.resx">
       <DependentUpon>fRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fRegisterRentHouse.resx">
+      <DependentUpon>fRegisterRentHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

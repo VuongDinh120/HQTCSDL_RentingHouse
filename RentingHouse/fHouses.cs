@@ -17,15 +17,46 @@ namespace RentingHouse
 {
     public partial class fHouses : Form
     {
-        public fHouses()
+        private int loginUser;
+
+        public int LoginUser
+        {
+            get { return loginUser; }
+            set { loginUser = value; }
+        }
+
+        public fHouses(int loginUser)
         {
             InitializeComponent();
+            LoginUser = loginUser;
+            dgvHouses.AutoGenerateColumns = false;
         }
 
         private void fHouses_Load(object sender, EventArgs e)
         {
-            dgvHouses.AutoGenerateColumns = false;
             dgvHouses.DataSource = HouseDAO.Instance.GetAllHouses();
+        }
+
+        private void btn_rentHouse_Click(object sender, EventArgs e)
+        {
+            var checkedList = new List<int>();
+           
+            foreach (DataGridViewRow dataGridRow in dgvHouses.Rows) {
+               string a = (string)dataGridRow.Cells["col_checkbox_houses"].Value;
+                if (dataGridRow.Cells["col_checkbox_houses"].Value != null &&
+                     a=="T")
+                {
+                    checkedList.Add((int)dataGridRow.Cells[0].Value);
+                }
+            }
+            if (checkedList.Count != 0)
+            {
+                new fRegisterRentHouse(checkedList, loginUser).Show();
+            }
+            else
+            {
+
+            }
         }
     }
 }

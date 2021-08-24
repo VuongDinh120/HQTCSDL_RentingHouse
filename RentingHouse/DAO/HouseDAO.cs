@@ -26,6 +26,18 @@ namespace RentingHouse.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable GetListHouseById(List<int> listId)
+        {
+            string query = "SELECT h.*, d.name AS district, u.fullname FROM dbo.houses h JOIN dbo.districts d ON h.district_id = d.id JOIN dbo.users u ON h.h_user_id = u.id WHERE";
+            foreach (int item in listId)
+            {
+                string str = string.Format(" h.id = {0} OR", item);
+                query += str;
+            }
+            query = query.Substring(0, query.Length - 3);
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public House GetHouseById(int id)
         {
             House house = null;

@@ -1,18 +1,19 @@
-﻿using RentingHouse.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using RentingHouse.DTO;
+using System.Data;
+
 namespace RentingHouse.DAO
 {
-    class FeeDAO
+    public class FeeDAO
     {
         private static FeeDAO instance;
 
-        public static FeeDAO Instance
+        public static FeeDAO Instance //Phương thức singleton
         {
             get { if (instance == null) instance = new FeeDAO(); return instance; }
             private set { instance = value; }
@@ -20,48 +21,52 @@ namespace RentingHouse.DAO
 
         private FeeDAO() { }
 
-        public Fee GetFeeById(int id)
+        public float GetLiabilityFee()
         {
             Fee fee = null;
 
-            string query = string.Format("SELECT * FROM dbo.fees WHERE id = {0}", id);
-
+            string query = string.Format("SELECT * FROM dbo.fees WHERE id = {0}", 1);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
                 fee = new Fee(item);
-                return fee;
+                return fee.Price;
             }
 
-            return fee;
+            return fee.Price;
         }
 
-        public int InsertFee(string name, float price)
+        public float GetRentFee()
         {
-            string query = string.Format("INSERT INTO dbo.fees(name, price) VALUES({0}, {1})", name, price);
+            Fee fee = null;
 
-            int numAffectedRows = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = string.Format("SELECT * FROM dbo.fees WHERE id = {0}", 2);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            return numAffectedRows;
+            foreach (DataRow item in data.Rows)
+            {
+                fee = new Fee(item);
+                return fee.Price;
+            }
+
+            return fee.Price;
         }
 
-        public int UpdateFee(Fee f)
+        public float GetHouseFee()
         {
-            string query = string.Format("UPDATE dbo.fees SET name = {0}, price = {1} WHERE id = {2}", f.Name, f.Price, f.Id);
+            Fee fee = null;
 
-            int numAffectedRows = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = string.Format("SELECT * FROM dbo.fees WHERE id = {0}", 3);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            return numAffectedRows;
-        }
+            foreach (DataRow item in data.Rows)
+            {
+                fee = new Fee(item);
+                return fee.Price;
+            }
 
-        public int DeleteFee(int id)
-        {
-            string query = string.Format("DELETE FROM dbo.fees WHERE id = {0}", id);
-
-            int numAffectedRows = DataProvider.Instance.ExecuteNonQuery(query);
-
-            return numAffectedRows;
+            return fee.Price;
         }
     }
 }

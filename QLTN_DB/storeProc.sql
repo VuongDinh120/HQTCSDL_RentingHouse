@@ -70,4 +70,3 @@ BEGIN TRAN
 COMMIT TRAN
 RETURN 1
 GO
-select * from users
