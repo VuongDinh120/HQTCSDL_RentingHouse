@@ -94,7 +94,35 @@ namespace RentingHouse
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+            DateTime now = DateTime.Now;
+            float rentFee = FeeDAO.Instance.GetRentFee();
+            float liabilityFee = FeeDAO.Instance.GetLiabilityFee();
+            Booking newBooking = new Booking(-1, now.ToString("yyyy-MM-dd"), now.ToString("yyyy-MM-dd"), null, "ChoXuLy", IdList.Count, rentFee, liabilityFee, loginUser);
+            int bookingId = BookingDAO.Instance.InsertBooking(newBooking);
+            if (bookingId > -1)
+            {
+                int detailInserted = 0;
+                for (int i = 0, n = IdList.Count; i < n; i++)
+                {
+                    BookingDetail bd = new BookingDetail(bookingId, IdList[i], null, null, null, -1, null);
+                    detailInserted += BookingDetailDAO.Instance.InsertBookingDetail(bd);
+                }
 
+                DialogResult result;
+                if (detailInserted >= IdList.Count)
+                {
+                    result = MessageBox.Show("Đăng ký thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    result = MessageBox.Show("Đăng ký không thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }
