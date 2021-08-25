@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fBookingDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBookingDetail.Designer.cs">
+      <DependentUpon>fBookingDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\BookingDAO.cs" />
     <Compile Include="DAO\BookingDetailDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBooking.Designer.cs">
+      <DependentUpon>fBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="fHouses.cs">
       <SubType>Form</SubType>
@@ -105,11 +117,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fBookingDetail.resx">
+      <DependentUpon>fBookingDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBooking.resx">
+      <DependentUpon>fBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fHouses.resx">
       <DependentUpon>fHouses.cs</DependentUpon>

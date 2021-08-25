@@ -44,6 +44,8 @@ namespace RentingHouse
             txt_idCard.Text = loginUser.IdCard;
             txt_balance.Text = loginUser.Balance.ToString();
             txt_role.Text = RoleDAO.Instance.GetRoleNameById(loginUser.Role);
+
+            dgv_transaction.DataSource = TransactionDAO.Instance.GetTransactionByUserId(loginUser.Id);
         }
 
         private void btn_update_user_Click(object sender, EventArgs e)

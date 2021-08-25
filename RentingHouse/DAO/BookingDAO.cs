@@ -36,6 +36,12 @@ namespace RentingHouse.DAO
             return b;
         }
 
+        public DataTable GetBookingByUserId(int id)
+        {
+            string query = string.Format("SELECT id, begin_date, end_date, received_date, b_status, number_house, liability_fee, rent_fee FROM dbo.booking WHERE b_user_id = {0}", id);
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertBooking(Booking b)
         {
             string query = string.Format($"INSERT INTO dbo.booking(begin_date, end_date, b_status, number_house, rent_fee, liability_fee, b_user_id) VALUES ({b.BeginDate}, {b.EndDate}, N'{b.Status}', {b.NumberHouse}, {b.RentFee}, {b.LiabilityFee}, {b.UserId});");

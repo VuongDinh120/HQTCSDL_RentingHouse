@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegisterHouse = new System.Windows.Forms.Button();
+            this.btnBooking = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnContract = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlFormHouses = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnBooking = new System.Windows.Forms.Button();
-            this.btnRegisterHouse = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,10 +57,41 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 710);
             this.panel1.TabIndex = 0;
+            // 
+            // btnRegisterHouse
+            // 
+            this.btnRegisterHouse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRegisterHouse.FlatAppearance.BorderSize = 0;
+            this.btnRegisterHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterHouse.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegisterHouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnRegisterHouse.Location = new System.Drawing.Point(0, 385);
+            this.btnRegisterHouse.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegisterHouse.Name = "btnRegisterHouse";
+            this.btnRegisterHouse.Size = new System.Drawing.Size(248, 52);
+            this.btnRegisterHouse.TabIndex = 3;
+            this.btnRegisterHouse.Text = "Đăng ký giới thiệu nhà";
+            this.btnRegisterHouse.UseVisualStyleBackColor = true;
+            // 
+            // btnBooking
+            // 
+            this.btnBooking.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBooking.FlatAppearance.BorderSize = 0;
+            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBooking.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBooking.Location = new System.Drawing.Point(0, 333);
+            this.btnBooking.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Size = new System.Drawing.Size(248, 52);
+            this.btnBooking.TabIndex = 2;
+            this.btnBooking.Text = "Lịch sử thuê nhà";
+            this.btnBooking.UseVisualStyleBackColor = true;
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // btnExit
             // 
@@ -70,7 +101,7 @@
             this.btnExit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnExit.Location = new System.Drawing.Point(0, 658);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(248, 52);
             this.btnExit.TabIndex = 1;
@@ -87,7 +118,7 @@
             this.btnContract.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnContract.Location = new System.Drawing.Point(0, 281);
-            this.btnContract.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContract.Margin = new System.Windows.Forms.Padding(4);
             this.btnContract.Name = "btnContract";
             this.btnContract.Size = new System.Drawing.Size(248, 52);
             this.btnContract.TabIndex = 1;
@@ -104,7 +135,7 @@
             this.btnAccount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnAccount.Location = new System.Drawing.Point(0, 229);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(248, 52);
             this.btnAccount.TabIndex = 1;
@@ -121,7 +152,7 @@
             this.btnHouses.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHouses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnHouses.Location = new System.Drawing.Point(0, 177);
-            this.btnHouses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHouses.Margin = new System.Windows.Forms.Padding(4);
             this.btnHouses.Name = "btnHouses";
             this.btnHouses.Size = new System.Drawing.Size(248, 52);
             this.btnHouses.TabIndex = 1;
@@ -137,7 +168,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(248, 177);
             this.panel2.TabIndex = 0;
@@ -146,7 +177,7 @@
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.pnlNav.Location = new System.Drawing.Point(0, 238);
-            this.pnlNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(4, 123);
             this.pnlNav.TabIndex = 2;
@@ -179,7 +210,7 @@
             // 
             this.pnlFormHouses.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormHouses.Location = new System.Drawing.Point(248, 123);
-            this.pnlFormHouses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFormHouses.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFormHouses.Name = "pnlFormHouses";
             this.pnlFormHouses.Size = new System.Drawing.Size(1407, 587);
             this.pnlFormHouses.TabIndex = 1;
@@ -196,36 +227,6 @@
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Danh sách nhà";
             // 
-            // btnBooking
-            // 
-            this.btnBooking.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBooking.FlatAppearance.BorderSize = 0;
-            this.btnBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBooking.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBooking.Location = new System.Drawing.Point(0, 333);
-            this.btnBooking.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBooking.Name = "btnBooking";
-            this.btnBooking.Size = new System.Drawing.Size(248, 52);
-            this.btnBooking.TabIndex = 2;
-            this.btnBooking.Text = "Lịch sử thuê nhà";
-            this.btnBooking.UseVisualStyleBackColor = true;
-            // 
-            // btnRegisterHouse
-            // 
-            this.btnRegisterHouse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegisterHouse.FlatAppearance.BorderSize = 0;
-            this.btnRegisterHouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterHouse.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterHouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnRegisterHouse.Location = new System.Drawing.Point(0, 385);
-            this.btnRegisterHouse.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRegisterHouse.Name = "btnRegisterHouse";
-            this.btnRegisterHouse.Size = new System.Drawing.Size(248, 52);
-            this.btnRegisterHouse.TabIndex = 3;
-            this.btnRegisterHouse.Text = "Đăng ký giới thiệu nhà";
-            this.btnRegisterHouse.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -236,7 +237,7 @@
             this.Controls.Add(this.pnlFormHouses);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMain";

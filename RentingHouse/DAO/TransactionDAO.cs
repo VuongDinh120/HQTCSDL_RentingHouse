@@ -37,6 +37,12 @@ namespace RentingHouse.DAO
             return trans;
         }
 
+        public DataTable GetTransactionByUserId(int id)
+        {
+            string query = string.Format("SELECT t.id, t.t_datetime, t.t_money, f.name FROM dbo.transactions t JOIN dbo.fees f ON t.t_fee_id = f.id WHERE t.t_user_id = {0}", id);
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertTransaction(Transaction t)
         {
             string query = string.Format($"INSERT INTO dbo.transactions(t_money, t_fee_id, t_user_id) VALUES({t.Money}, {t.FeeId}, {t.UserId})");

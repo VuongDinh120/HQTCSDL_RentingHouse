@@ -99,6 +99,20 @@ namespace RentingHouse
             btnContract.BackColor = Color.FromArgb(46, 51, 73);
         }
 
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnBooking.Height;
+            pnlNav.Top = btnBooking.Top;
+            btnBooking.BackColor = Color.FromArgb(46, 51, 73);
+
+            lblTitle.Text = "Lịch sử thuê nhà";
+            this.pnlFormHouses.Controls.Clear();
+            fBooking frmDashboard = new fBooking(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmDashboard.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormHouses.Controls.Add(frmDashboard);
+            frmDashboard.Show();
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnExit.Height;
@@ -123,9 +137,12 @@ namespace RentingHouse
             btnContract.BackColor = Color.FromArgb(24, 30, 54);
         }
 
+
         private void btnExit_Leave(object sender, EventArgs e)
         {
             btnExit.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        
     }
 }
