@@ -60,6 +60,16 @@ namespace RentingHouse
             label2.Text = RoleDAO.Instance.GetRoleNameById(loginUser.Role);
         }
 
+        private void btnSurvey_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlreadySurvey_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnExit.Height;
@@ -73,5 +83,7 @@ namespace RentingHouse
         {
             btnExit.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        
     }
 }

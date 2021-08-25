@@ -34,13 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvHouses = new System.Windows.Forms.DataGridView();
-            this.btn_rentHouse = new System.Windows.Forms.Button();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_district_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_rental = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_number_people = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_checkbox_houses = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_rentHouse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,16 +106,6 @@
             this.dgvHouses.Size = new System.Drawing.Size(1107, 405);
             this.dgvHouses.TabIndex = 5;
             // 
-            // btn_rentHouse
-            // 
-            this.btn_rentHouse.Location = new System.Drawing.Point(958, 12);
-            this.btn_rentHouse.Name = "btn_rentHouse";
-            this.btn_rentHouse.Size = new System.Drawing.Size(146, 31);
-            this.btn_rentHouse.TabIndex = 6;
-            this.btn_rentHouse.Text = "Đăng ký thuê";
-            this.btn_rentHouse.UseVisualStyleBackColor = true;
-            this.btn_rentHouse.Click += new System.EventHandler(this.btn_rentHouse_Click);
-            // 
             // col_id
             // 
             this.col_id.DataPropertyName = "id";
@@ -161,6 +151,16 @@
             this.col_checkbox_houses.Name = "col_checkbox_houses";
             this.col_checkbox_houses.TrueValue = "T";
             // 
+            // btn_rentHouse
+            // 
+            this.btn_rentHouse.Location = new System.Drawing.Point(973, 12);
+            this.btn_rentHouse.Name = "btn_rentHouse";
+            this.btn_rentHouse.Size = new System.Drawing.Size(146, 31);
+            this.btn_rentHouse.TabIndex = 6;
+            this.btn_rentHouse.Text = "Đăng ký thuê";
+            this.btn_rentHouse.UseVisualStyleBackColor = true;
+            this.btn_rentHouse.Click += new System.EventHandler(this.btn_rentHouse_Click);
+            // 
             // fHouses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -178,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
