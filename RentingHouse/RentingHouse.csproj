@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fRegisterHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRegisterHouse.Designer.cs">
+      <DependentUpon>fRegisterHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="fContract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fRegisterHouse.resx">
+      <DependentUpon>fRegisterHouse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fContract.resx">
       <DependentUpon>fContract.cs</DependentUpon>
     </EmbeddedResource>

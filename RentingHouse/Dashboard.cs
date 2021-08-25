@@ -122,7 +122,16 @@ namespace RentingHouse
 
         private void btnRegisterHouse_Click(object sender, EventArgs e)
         {
+            pnlNav.Height = btnRegisterHouse.Height;
+            pnlNav.Top = btnRegisterHouse.Top;
+            btnRegisterHouse.BackColor = Color.FromArgb(46, 51, 73);
 
+            lblTitle.Text = "Đăng ký giới thiệu nhà";
+            this.pnlFormHouses.Controls.Clear();
+            fRegisterHouse frmDashboard = new fRegisterHouse(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmDashboard.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormHouses.Controls.Add(frmDashboard);
+            frmDashboard.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

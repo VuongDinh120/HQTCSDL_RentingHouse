@@ -15,7 +15,7 @@ using RentingHouse.DTO;
 
 namespace RentingHouse
 {
-    public partial class fContract : Form
+    public partial class fRegisterHouse : Form
     {
         private int loginUser;
 
@@ -25,30 +25,17 @@ namespace RentingHouse
             set { loginUser = value; }
         }
 
-        public fContract(int loginUser)
+        public fRegisterHouse(int loginUser)
         {
             InitializeComponent();
             LoginUser = loginUser;
-            dgvContract.AutoGenerateColumns = false;
+          
         }
 
-
-        private void fContract_Load(object sender, EventArgs e)
+        private void fRegisterHouse_Load(object sender, EventArgs e)
         {
-            dgvContract.DataSource = HouseDAO.Instance.GetHousesByUserId(loginUser);
+            
         }
 
-
-        private void dgvContract_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
-            {
-                int id = (int)dgvContract.Rows[e.RowIndex].Cells[0].Value;
-                new fContractDetail(id).Show();
-            }
-        }
     }
 }
