@@ -57,10 +57,10 @@ namespace RentingHouse
                         new Dashboard(user).Show();
                         break;
                     case 2:
-                        // code block
+                        new SurveyDashboard(user).Show();
                         break;
                     case 3:
-                        // code block
+                        new AdminDashboard(user).Show();
                         break;
                     default:
                         break;

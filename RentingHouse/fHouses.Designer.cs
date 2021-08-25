@@ -178,7 +178,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
