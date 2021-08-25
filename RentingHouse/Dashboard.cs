@@ -47,7 +47,7 @@ namespace RentingHouse
             pnlNav.Left = btnHouses.Left;
             btnHouses.BackColor = Color.FromArgb(46, 51, 73);
 
-            lblTitle.Text = "Danh sách nhà";
+            lblTitle.Text = "Đăng ký thuê nhà";
             this.pnlFormHouses.Controls.Clear();
             fHouses frmDashboard = new fHouses(loginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;

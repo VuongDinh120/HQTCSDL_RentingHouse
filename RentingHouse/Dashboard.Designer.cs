@@ -226,9 +226,9 @@
             this.lblTitle.Location = new System.Drawing.Point(272, 27);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(261, 39);
+            this.lblTitle.Size = new System.Drawing.Size(302, 39);
             this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Danh sách nhà";
+            this.lblTitle.Text = "Đăng ký thuê nhà";
             // 
             // Dashboard
             // 

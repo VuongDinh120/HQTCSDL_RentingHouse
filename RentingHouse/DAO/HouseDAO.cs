@@ -39,7 +39,7 @@ namespace RentingHouse.DAO
         }
         public DataTable GetHousesByUserId(int id)
         {
-            string query = string.Format("SELECT id, h_address, h_status, created_at, reason FROM houses WHERE h_user_id = {0}",id);
+            string query = string.Format("SELECT h.id, h.h_address, h.h_status, h.created_at, h.reason, d.name AS district FROM houses h JOIN districts d ON h.district_id = d.id WHERE h.h_user_id = {0}", id);
             return DataProvider.Instance.ExecuteQuery(query);
         }
 

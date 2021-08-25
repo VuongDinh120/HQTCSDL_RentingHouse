@@ -36,8 +36,9 @@
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_district = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_detail = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.SuspendLayout();
@@ -71,8 +72,9 @@
             this.col_id,
             this.col_createdAt,
             this.col_address,
-            this.col_reason,
+            this.col_district,
             this.col_status,
+            this.col_reason,
             this.btn_detail});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
@@ -119,13 +121,12 @@
             this.col_address.Name = "col_address";
             this.col_address.ReadOnly = true;
             // 
-            // col_reason
+            // col_district
             // 
-            this.col_reason.DataPropertyName = "reason";
-            this.col_reason.FillWeight = 111.6622F;
-            this.col_reason.HeaderText = "Lý do";
-            this.col_reason.Name = "col_reason";
-            this.col_reason.ReadOnly = true;
+            this.col_district.DataPropertyName = "district";
+            this.col_district.HeaderText = "Quận";
+            this.col_district.Name = "col_district";
+            this.col_district.ReadOnly = true;
             // 
             // col_status
             // 
@@ -134,6 +135,14 @@
             this.col_status.HeaderText = "Trạng thái";
             this.col_status.Name = "col_status";
             this.col_status.ReadOnly = true;
+            // 
+            // col_reason
+            // 
+            this.col_reason.DataPropertyName = "reason";
+            this.col_reason.FillWeight = 111.6622F;
+            this.col_reason.HeaderText = "Lý do";
+            this.col_reason.Name = "col_reason";
+            this.col_reason.ReadOnly = true;
             // 
             // btn_detail
             // 
@@ -165,8 +174,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_createdAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_district;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_reason;
         private System.Windows.Forms.DataGridViewButtonColumn btn_detail;
     }
 }
