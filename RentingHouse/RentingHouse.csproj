@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fContract.Designer.cs">
+      <DependentUpon>fContract.cs</DependentUpon>
+    </Compile>
     <Compile Include="fBookingDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,12 @@
     <Compile Include="fBooking.Designer.cs">
       <DependentUpon>fBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="fContractDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fContractDetail.Designer.cs">
+      <DependentUpon>fContractDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="fHouses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +129,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fContract.resx">
+      <DependentUpon>fContract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fBookingDetail.resx">
       <DependentUpon>fBookingDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBooking.resx">
       <DependentUpon>fBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fContractDetail.resx">
+      <DependentUpon>fContractDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fHouses.resx">
       <DependentUpon>fHouses.cs</DependentUpon>

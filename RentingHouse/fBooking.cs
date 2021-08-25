@@ -45,9 +45,9 @@ namespace RentingHouse
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                int a = (int)dgvBooking.Rows[e.RowIndex].Cells[0].Value;
-                MessageBox.Show(a.ToString());
-                //new fBookingDetail().Show();
+                int id = (int)dgvBooking.Rows[e.RowIndex].Cells[0].Value;
+                new fBookingDetail(id).Show();
+                //MessageBox.Show(id.ToString());
             }
         }
     }

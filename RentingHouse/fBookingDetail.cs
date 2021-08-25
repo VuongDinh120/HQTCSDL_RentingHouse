@@ -23,7 +23,7 @@ namespace RentingHouse
         public fBookingDetail(int id)
         {
             InitializeComponent();
-
+            BookingId = id;
         }
     }
 }

@@ -76,6 +76,8 @@
             this.btnRegisterHouse.TabIndex = 3;
             this.btnRegisterHouse.Text = "Đăng ký giới thiệu nhà";
             this.btnRegisterHouse.UseVisualStyleBackColor = true;
+            this.btnRegisterHouse.Click += new System.EventHandler(this.btnRegisterHouse_Click);
+            this.btnRegisterHouse.Leave += new System.EventHandler(this.btnRegisterHouse_Leave);
             // 
             // btnBooking
             // 
@@ -92,6 +94,7 @@
             this.btnBooking.Text = "Lịch sử thuê nhà";
             this.btnBooking.UseVisualStyleBackColor = true;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
+            this.btnBooking.Leave += new System.EventHandler(this.btnBooking_Leave);
             // 
             // btnExit
             // 
