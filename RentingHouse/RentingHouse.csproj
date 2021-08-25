@@ -47,10 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BookingDAO.cs" />
+    <Compile Include="DAO\BookingDetailDAO.cs" />
+    <Compile Include="DAO\ContractDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DistrictDAO.cs" />
     <Compile Include="DAO\FeeDAO.cs" />
     <Compile Include="DAO\HouseDAO.cs" />
     <Compile Include="DAO\RoleDAO.cs" />
+    <Compile Include="DAO\SurveyDAO.cs" />
+    <Compile Include="DAO\TransactionDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DTO\Booking.cs" />
     <Compile Include="DTO\BookingDetail.cs" />

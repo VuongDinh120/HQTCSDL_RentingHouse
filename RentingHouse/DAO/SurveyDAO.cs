@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RentingHouse.DAO
 {
-    class SurveyDAO
+    public class SurveyDAO
     {
         private static SurveyDAO instance;
 

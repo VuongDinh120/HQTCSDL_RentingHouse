@@ -1,14 +1,15 @@
-﻿using RentingHouse.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using RentingHouse.DTO;
+using System.Data;
+
 namespace RentingHouse.DAO
 {
-    class ContractDAO
+    public class ContractDAO
     {
         private static ContractDAO instance;
 

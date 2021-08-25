@@ -117,7 +117,6 @@ namespace RentingHouse.DAO
 
                 connection.Close();
             }
-
             return data;
         }
     }

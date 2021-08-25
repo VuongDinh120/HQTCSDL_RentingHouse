@@ -1,14 +1,15 @@
-﻿using RentingHouse.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using RentingHouse.DTO;
+using System.Data;
+
 namespace RentingHouse.DAO
 {
-    class BookingDetailDAO
+    public class BookingDetailDAO
     {
         private static BookingDetailDAO instance;
 
@@ -40,7 +41,7 @@ namespace RentingHouse.DAO
         public int InsertBookingDetail(BookingDetail bd)
         {
             string query = string.Format($"INSERT INTO dbo.booking_detail(booking_id, house_id, meet_time, meet_address, meet_phone, is_rented) " +
-                $"VALUES({bd.BookingId}, {bd.HouseId}, {bd.MeetTime}, {bd.MeetAddress}, {bd.MeetPhone}, {bd.IsRented})");
+                $"VALUES({bd.BookingId}, {bd.HouseId}, {(bd.MeetTime ?? "NULL")}, {(bd.MeetAddress ?? "NULL")}, {(bd.MeetPhone ?? "NULL")}, {bd.IsRented})");
 
             int numAffectedRows = DataProvider.Instance.ExecuteNonQuery(query);
 

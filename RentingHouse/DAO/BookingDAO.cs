@@ -38,11 +38,12 @@ namespace RentingHouse.DAO
 
         public int InsertBooking(Booking b)
         {
-            string query = string.Format($"INSERT INTO dbo.booking(begin_date, end_date, b_status, number_house, rent_fee, liability_fee, b_user_id) VALUES ({b.BeginDate}, {b.EndDate}, {b.Status}, {b.NumberHouse}, {b.RentFee}, {b.LiabilityFee}, {b.UserId})");
+            string query = string.Format($"INSERT INTO dbo.booking(begin_date, end_date, b_status, number_house, rent_fee, liability_fee, b_user_id) VALUES ({b.BeginDate}, {b.EndDate}, N'{b.Status}', {b.NumberHouse}, {b.RentFee}, {b.LiabilityFee}, {b.UserId});");
             //System.Windows.Forms.MessageBox.Show(query, "insert booking", System.Windows.Forms.MessageBoxButtons.OK);
+            query += " SELECT CAST(scope_identity() AS int)";
 
             int idInserted = (int)DataProvider.Instance.ExecuteScalar(query);
-
+                
             return idInserted;
         }
 

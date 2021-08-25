@@ -55,7 +55,7 @@ namespace RentingHouse
             }
             else
             {
-
+                MessageBox.Show("Chưa chọn nhà", "Thông báo");
             }
         }
     }
