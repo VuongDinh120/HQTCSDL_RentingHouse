@@ -37,6 +37,11 @@ namespace RentingHouse.DAO
             query = query.Substring(0, query.Length - 3);
             return DataProvider.Instance.ExecuteQuery(query);
         }
+        public DataTable GetHousesByUserId(int id)
+        {
+            string query = string.Format("SELECT id, h_address, h_status, created_at, reason FROM houses WHERE h_user_id = {0}",id);
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
 
         public House GetHouseById(int id)
         {
