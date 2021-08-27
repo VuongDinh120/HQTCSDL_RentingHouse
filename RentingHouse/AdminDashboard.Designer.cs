@@ -96,8 +96,8 @@ namespace RentingHouse
             this.btnSurvey.TabIndex = 1;
             this.btnSurvey.Text = "Quản lý khảo sát";
             this.btnSurvey.UseVisualStyleBackColor = true;
-            this.btnSurvey.Click += new System.EventHandler(this.btnBooking_Click);
-            this.btnSurvey.Leave += new System.EventHandler(this.btnBooking_Leave);
+            this.btnSurvey.Click += new System.EventHandler(this.btnSurvey_Click);
+            this.btnSurvey.Leave += new System.EventHandler(this.btnSurvey_Leave);
             // 
             // btnBooking
             // 

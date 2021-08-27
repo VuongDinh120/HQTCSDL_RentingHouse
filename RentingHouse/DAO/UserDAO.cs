@@ -63,6 +63,12 @@ namespace RentingHouse.DAO
             return user;
         }
 
+        public DataTable GetAllUsers()
+        {
+            string query = string.Format("SELECT u.id, u.username, u.fullname, u.dob, u.phone, r.r_type FROM dbo.users u JOIN dbo.roles r ON u.role_id = r.id");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public bool UpdateAccount(User user)
         {
             //Sài query proc phải để param cách nhau như thế này "@a , @b" ko là bị lỗi
@@ -73,8 +79,8 @@ namespace RentingHouse.DAO
 
         public bool UpdatePassword(int id, string newpass)
         {
-            string query=string.Format("UPDATE dbo.users SET u_password = N'{0}' WHERE id = {1}", newpass, id);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = "usp_ChangPassword @id , @passWord";// cấu truy vấn gọi procedure
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, newpass });
 
             return result > 0;
         }

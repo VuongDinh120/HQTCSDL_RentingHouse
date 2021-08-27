@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,8 +46,27 @@ namespace RentingHouse
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-
-            User user = UserDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
+            User user = null;
+            try
+            {
+                user = UserDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
+                /*if (user!=null)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo",
+                     MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại", "Thông báo",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }*/
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString(), "Đăng nhập thất bại",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
 
             // Validate
             if (user!=null)

@@ -52,6 +52,48 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAccountAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountAdmin.Designer.cs">
+      <DependentUpon>fAccountAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMeetingAdmin .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMeetingAdmin .Designer.cs">
+      <DependentUpon>fMeetingAdmin .cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBookingAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBookingAdmin.Designer.cs">
+      <DependentUpon>fBookingAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBookingDetailAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBookingDetailAdmin.Designer.cs">
+      <DependentUpon>fBookingDetailAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fHouseDetailAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHouseDetailAdmin.Designer.cs">
+      <DependentUpon>fHouseDetailAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAccountDetailAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountDetailAdmin.Designer.cs">
+      <DependentUpon>fAccountDetailAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fHouseAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHouseAdmin.Designer.cs">
+      <DependentUpon>fHouseAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="fRegisterHouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +181,18 @@
     <Compile Include="fRegisterRentHouse.Designer.cs">
       <DependentUpon>fRegisterRentHouse.cs</DependentUpon>
     </Compile>
+    <Compile Include="fSurveyHouses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSurveyHouses.Designer.cs">
+      <DependentUpon>fSurveyHouses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSurveyAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSurveyAdmin.Designer.cs">
+      <DependentUpon>fSurveyAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSurveys.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +209,27 @@
     </Compile>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAccountAdmin.resx">
+      <DependentUpon>fAccountAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMeetingAdmin .resx">
+      <DependentUpon>fMeetingAdmin .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBookingAdmin.resx">
+      <DependentUpon>fBookingAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBookingDetailAdmin.resx">
+      <DependentUpon>fBookingDetailAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fHouseDetailAdmin.resx">
+      <DependentUpon>fHouseDetailAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAccountDetailAdmin.resx">
+      <DependentUpon>fAccountDetailAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fHouseAdmin.resx">
+      <DependentUpon>fHouseAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fRegisterHouse.resx">
       <DependentUpon>fRegisterHouse.cs</DependentUpon>
@@ -188,6 +263,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fRegisterRentHouse.resx">
       <DependentUpon>fRegisterRentHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSurveyHouses.resx">
+      <DependentUpon>fSurveyHouses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSurveyAdmin.resx">
+      <DependentUpon>fSurveyAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSurveys.resx">
       <DependentUpon>fSurveys.cs</DependentUpon>

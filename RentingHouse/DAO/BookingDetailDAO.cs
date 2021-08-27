@@ -38,6 +38,12 @@ namespace RentingHouse.DAO
             return b;
         }
 
+        public DataTable GetAllNullMeeting()
+        {
+            string query = string.Format("SELECT bd.*,h.*,u.* FROM dbo.booking_detail bd JOIN dbo.houses h ON h.id = bd.house_id JOIN dbo.users u ON h.h_user_id = u.id WHERE bd.meet_address IS NULL OR bd.meet_phone IS NULL OR bd.meet_time IS NULL");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertBookingDetail(BookingDetail bd)
         {
             string query = string.Format($"INSERT INTO dbo.booking_detail(booking_id, house_id, meet_time, meet_address, meet_phone, is_rented) " +

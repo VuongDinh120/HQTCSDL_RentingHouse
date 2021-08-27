@@ -49,7 +49,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Quản lý tài khoản";
             this.pnlFormHouses.Controls.Clear();
-            fHouses frmDashboard = new fHouses(loginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fAccountAdmin frmDashboard = new fAccountAdmin() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -71,7 +71,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Quản lý nhà";
             this.pnlFormHouses.Controls.Clear();
-            fHouses frmDashboard = new fHouses(loginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fHouseAdmin frmDashboard = new fHouseAdmin() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -86,7 +86,7 @@ namespace RentingHouse
 
             lblTitle.Text = "Quản lý tài khoản";
             this.pnlFormHouses.Controls.Clear();
-            fAccount frmDashboard = new fAccount(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fAccountAdmin frmDashboard = new fAccountAdmin() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -96,11 +96,12 @@ namespace RentingHouse
         {
             pnlNav.Height = btnBooking.Height;
             pnlNav.Top = btnBooking.Top;
+            pnlNav.Left = btnBooking.Left;
             btnBooking.BackColor = Color.FromArgb(46, 51, 73);
 
             lblTitle.Text = "Quản lý đơn thuê nhà";
             this.pnlFormHouses.Controls.Clear();
-            fSurveys frmDashboard = new fSurveys(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fBookingAdmin frmDashboard = new fBookingAdmin() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -111,11 +112,12 @@ namespace RentingHouse
             //design
             pnlNav.Height = btnSurvey.Height;
             pnlNav.Top = btnSurvey.Top;
+            pnlNav.Left = btnSurvey.Left;
             btnSurvey.BackColor = Color.FromArgb(46, 51, 73);
 
             lblTitle.Text = "Quản lý khảo sát";
             this.pnlFormHouses.Controls.Clear();
-            fSurveys frmDashboard = new fSurveys(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fSurveyAdmin frmDashboard = new fSurveyAdmin(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -126,11 +128,12 @@ namespace RentingHouse
             //design
             pnlNav.Height = btnMeeting.Height;
             pnlNav.Top = btnMeeting.Top;
+
             btnMeeting.BackColor = Color.FromArgb(46, 51, 73);
 
             lblTitle.Text = "Quản lý lịch hẹn";
             this.pnlFormHouses.Controls.Clear();
-            fSurveys frmDashboard = new fSurveys(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            fMeetingAdmin frmDashboard = new fMeetingAdmin() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmDashboard.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormHouses.Controls.Add(frmDashboard);
             frmDashboard.Show();
@@ -175,6 +178,5 @@ namespace RentingHouse
             btnExit.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        
     }
 }

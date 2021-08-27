@@ -62,12 +62,47 @@ namespace RentingHouse
 
         private void btnSurvey_Click(object sender, EventArgs e)
         {
+            //design
+            pnlNav.Height = btnSurvey.Height;
+            pnlNav.Top = btnSurvey.Top;
+            btnSurvey.BackColor = Color.FromArgb(46, 51, 73);
 
+            lblTitle.Text = "Danh sách Nhà chưa khảo sát";
+            this.pnlSurveys.Controls.Clear();
+            fSurveys frmDashboard = new fSurveys(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmDashboard.FormBorderStyle = FormBorderStyle.None;
+            this.pnlSurveys.Controls.Add(frmDashboard);
+            frmDashboard.Show();
         }
 
         private void btnAlreadySurvey_Click(object sender, EventArgs e)
         {
+            //design
+            pnlNav.Height = btnSurvey.Height;
+            pnlNav.Top = btnSurvey.Top;
+            btnSurvey.BackColor = Color.FromArgb(46, 51, 73);
 
+            lblTitle.Text = "Quản lý khảo sát";
+            this.pnlSurveys.Controls.Clear();
+            fSurveyAdmin frmDashboard = new fSurveyAdmin(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmDashboard.FormBorderStyle = FormBorderStyle.None;
+            this.pnlSurveys.Controls.Add(frmDashboard);
+            frmDashboard.Show();
+        }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            //design
+            pnlNav.Height = btn_account.Height;
+            pnlNav.Top = btn_account.Top;
+            btn_account.BackColor = Color.FromArgb(46, 51, 73);
+
+            lblTitle.Text = "Thông tin tài khoản";
+            this.pnlSurveys.Controls.Clear();
+            fAccount frmDashboard = new fAccount(LoginUser.Id) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmDashboard.FormBorderStyle = FormBorderStyle.None;
+            this.pnlSurveys.Controls.Add(frmDashboard);
+            frmDashboard.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -84,6 +119,5 @@ namespace RentingHouse
             btnExit.BackColor = Color.FromArgb(24, 30, 54);
         }
 
-        
     }
 }

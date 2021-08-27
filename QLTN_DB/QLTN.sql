@@ -29,7 +29,7 @@ CREATE TABLE users(
 	dob nchar(40),
 	phone nchar(15),
 	id_card nchar(15),
-	account_balance float,
+	account_balance float DEFAULT 0 CHECK (account_balance>=0),
 	role_id INT
 )
 GO
@@ -37,7 +37,7 @@ GO
 CREATE TABLE fees(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name nvarchar(40),
-	price float
+	price float CHECK (price>=0)
 )
 GO
 

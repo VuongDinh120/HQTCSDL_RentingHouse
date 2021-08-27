@@ -22,7 +22,13 @@ namespace RentingHouse.DAO
 
         public DataTable GetAllSurveys()
         {
-            string query = string.Format("SELECT s.*, h.h_address, u.fullname FROM dbo.surveys s JOIN dbo.houses h ON s.house_id = h.id JOIN dbo.users u ON s.s_user_id = u.id");
+            string query = string.Format("SELECT s.*, h.h_address,h.area, d.name as district, u.fullname FROM dbo.surveys s JOIN dbo.houses h ON s.house_id = h.id JOIN dbo.users u ON s.s_user_id = u.id JOIN districts d ON d.id = h.district_id");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetAllHousesNotSurveys()
+        {
+            string query = string.Format("SELECT h.*,d.name as district, u.fullname FROM dbo.houses h JOIN dbo.users u ON h.h_user_id = u.id JOIN districts d ON d.id = h.district_id WHERE h.id NOT IN (SELECT house_id FROM surveys)");
             return DataProvider.Instance.ExecuteQuery(query);
         }
     }

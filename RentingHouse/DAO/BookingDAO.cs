@@ -42,6 +42,12 @@ namespace RentingHouse.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable GetAllBooking()
+        {
+            string query = string.Format("SELECT id, begin_date=CONVERT(varchar,begin_date,105), end_date=convert(varchar,end_date,105), received_date = isnull(convert(nvarchar(10),received_date,105), N'Chưa nhận'), b_status, number_house, liability_fee, rent_fee, b_user_id FROM dbo.booking");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertBooking(Booking b)
         {
             string query = string.Format($"INSERT INTO dbo.booking(begin_date, end_date, b_status, number_house, rent_fee, liability_fee, b_user_id) VALUES ({b.BeginDate}, {b.EndDate}, N'{b.Status}', {b.NumberHouse}, {b.RentFee}, {b.LiabilityFee}, {b.UserId});");
