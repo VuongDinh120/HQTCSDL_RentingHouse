@@ -44,6 +44,12 @@ namespace RentingHouse.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }
 
+        public DataTable GetListHouseById(int id)
+        {
+            string query = string.Format("SELECT bd.*, h.*, d.name AS district, u.fullname FROM booking_detail bd JOIN houses h ON bd.house_id=h.id JOIN districts d ON d.id = h.district_id JOIN users u ON u.id = h.h_user_id WHERE bd.booking_id = {0}",id);
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertBookingDetail(BookingDetail bd)
         {
             string query = string.Format($"INSERT INTO dbo.booking_detail(booking_id, house_id, meet_time, meet_address, meet_phone, is_rented) " +
@@ -70,6 +76,22 @@ namespace RentingHouse.DAO
             int numAffectedRows = DataProvider.Instance.ExecuteNonQuery(query);
 
             return numAffectedRows;
+        }
+
+        public bool DeclineBooking(int id)
+        {
+            //Sài query proc phải để param cách nhau như thế này "@a , @b" ko là bị lỗi
+            int result = DataProvider.Instance.ExecuteNonQuery("usp_DeclineHouse @id ", new object[] {id});
+
+            return result > 0;
+        }
+
+        public bool AccpectBooking(int houseId, int bookingId)
+        {
+            //Sài query proc phải để param cách nhau như thế này "@a , @b" ko là bị lỗi
+            int result = DataProvider.Instance.ExecuteNonQuery("usp_AcceptHouse @booingId , @houseId", new object[] {bookingId, houseId});
+
+            return result > 0;
         }
     }
 }

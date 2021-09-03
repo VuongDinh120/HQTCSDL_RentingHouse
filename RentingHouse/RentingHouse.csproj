@@ -52,46 +52,52 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAccountAdmin.cs">
+    <Compile Include="fBookingDetail_Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAccountAdmin.Designer.cs">
+    <Compile Include="fBookingDetail_Feedback.Designer.cs">
+      <DependentUpon>fBookingDetail_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAdmin\fAccountAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAdmin\fAccountAdmin.Designer.cs">
       <DependentUpon>fAccountAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fMeetingAdmin .cs">
+    <Compile Include="ViewAdmin\fMeetingAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fMeetingAdmin .Designer.cs">
-      <DependentUpon>fMeetingAdmin .cs</DependentUpon>
+    <Compile Include="ViewAdmin\fMeetingAdmin.Designer.cs">
+      <DependentUpon>fMeetingAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fBookingAdmin.cs">
+    <Compile Include="ViewAdmin\fBookingAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fBookingAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fBookingAdmin.Designer.cs">
       <DependentUpon>fBookingAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fBookingDetailAdmin.cs">
+    <Compile Include="ViewAdmin\fBookingDetailAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fBookingDetailAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fBookingDetailAdmin.Designer.cs">
       <DependentUpon>fBookingDetailAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fHouseDetailAdmin.cs">
+    <Compile Include="ViewAdmin\fHouseDetailAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fHouseDetailAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fHouseDetailAdmin.Designer.cs">
       <DependentUpon>fHouseDetailAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAccountDetailAdmin.cs">
+    <Compile Include="ViewAdmin\fAccountDetailAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fAccountDetailAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fAccountDetailAdmin.Designer.cs">
       <DependentUpon>fAccountDetailAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fHouseAdmin.cs">
+    <Compile Include="ViewAdmin\fHouseAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fHouseAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fHouseAdmin.Designer.cs">
       <DependentUpon>fHouseAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="fRegisterHouse.cs">
@@ -187,10 +193,10 @@
     <Compile Include="fSurveyHouses.Designer.cs">
       <DependentUpon>fSurveyHouses.cs</DependentUpon>
     </Compile>
-    <Compile Include="fSurveyAdmin.cs">
+    <Compile Include="ViewAdmin\fSurveyAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fSurveyAdmin.Designer.cs">
+    <Compile Include="ViewAdmin\fSurveyAdmin.Designer.cs">
       <DependentUpon>fSurveyAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="fSurveys.cs">
@@ -210,25 +216,28 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAccountAdmin.resx">
+    <EmbeddedResource Include="fBookingDetail_Feedback.resx">
+      <DependentUpon>fBookingDetail_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAdmin\fAccountAdmin.resx">
       <DependentUpon>fAccountAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fMeetingAdmin .resx">
-      <DependentUpon>fMeetingAdmin .cs</DependentUpon>
+    <EmbeddedResource Include="ViewAdmin\fMeetingAdmin.resx">
+      <DependentUpon>fMeetingAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fBookingAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fBookingAdmin.resx">
       <DependentUpon>fBookingAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fBookingDetailAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fBookingDetailAdmin.resx">
       <DependentUpon>fBookingDetailAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fHouseDetailAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fHouseDetailAdmin.resx">
       <DependentUpon>fHouseDetailAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fAccountDetailAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fAccountDetailAdmin.resx">
       <DependentUpon>fAccountDetailAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fHouseAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fHouseAdmin.resx">
       <DependentUpon>fHouseAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fRegisterHouse.resx">
@@ -267,7 +276,7 @@
     <EmbeddedResource Include="fSurveyHouses.resx">
       <DependentUpon>fSurveyHouses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fSurveyAdmin.resx">
+    <EmbeddedResource Include="ViewAdmin\fSurveyAdmin.resx">
       <DependentUpon>fSurveyAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSurveys.resx">

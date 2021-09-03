@@ -41,7 +41,8 @@ VALUES (150.15, 1000, 10, N'766 Phố Bảo Hương Vy', N'Một nhà bếp trun
 		(70.60, 2000, 5, N'72 Phố Chung Thiên Sâm', N'Một nhà bếp nhỏ và một phòng tắm lớn',N'Đang được thuê', 5, 2),
 		(147.22, 1000, 3, N'144, Thôn Diệu Thập', N'Một nhà bếp hiện đại và ba phòng tắm',N'Sẵn sàng', 4, 1),
 		(155.30, 1000, 3, N'165, Thôn Bắc', N'Một nhà bếp hiện đại và ba phòng tắm',N'pending', 4, 1),
-		(175.80, 1500, 3, N'167, Thôn Nam', N'Một nhà bếp hiện đại và ba phòng tắm',N'pending', 4, 2)
+		(175.80, 1500, 3, N'167, Thôn Nam', N'Một nhà bếp hiện đại và ba phòng tắm',N'pending', 4, 2),
+		(157.30, 1000, 8, N'12, Thôn Tây', N'Một nhà bếp hiện đại và ba phòng tắm',N'pending', 2, 1)
 GO
 
 

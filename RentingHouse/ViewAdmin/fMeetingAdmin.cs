@@ -15,7 +15,7 @@ using RentingHouse.DTO;
 
 namespace RentingHouse
 {
-    public partial class fMeetingAdmin : Form
+    public partial class fMeetingAdmin: Form
     {
         public fMeetingAdmin()
         {

@@ -47,15 +47,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_meet_phone = new System.Windows.Forms.TextBox();
-            this.txt_meet_time = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txt_id_house = new System.Windows.Forms.TextBox();
             this.txt_meet_address = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_id_house = new System.Windows.Forms.TextBox();
+            this.txt_meet_time = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_meet_phone = new System.Windows.Forms.TextBox();
             this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meet_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meet_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meet_phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_district = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +66,7 @@
             this.col_rental = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_is_rented = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_checkbox_house = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.col_checkbox_houses = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listHouseChecked)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,6 +77,9 @@
             this.dgv_listHouseChecked.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listHouseChecked.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id,
+            this.meet_time,
+            this.meet_address,
+            this.meet_phone,
             this.col_address,
             this.col_district,
             this.col_area,
@@ -81,12 +87,13 @@
             this.col_rental,
             this.col_owner,
             this.col_is_rented,
-            this.col_checkbox_house});
+            this.col_checkbox_houses});
             this.dgv_listHouseChecked.Location = new System.Drawing.Point(12, 251);
             this.dgv_listHouseChecked.Name = "dgv_listHouseChecked";
             this.dgv_listHouseChecked.RowTemplate.Height = 24;
             this.dgv_listHouseChecked.Size = new System.Drawing.Size(1089, 258);
             this.dgv_listHouseChecked.TabIndex = 1;
+            this.dgv_listHouseChecked.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listHouseChecked_CellClick);
             // 
             // btn_accept
             // 
@@ -96,6 +103,7 @@
             this.btn_accept.TabIndex = 2;
             this.btn_accept.Text = "Thuê";
             this.btn_accept.UseVisualStyleBackColor = true;
+            this.btn_accept.Click += new System.EventHandler(this.btn_accept_Click);
             // 
             // btn_cancel
             // 
@@ -105,6 +113,7 @@
             this.btn_cancel.TabIndex = 2;
             this.btn_cancel.Text = "Hủy thuê";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_close
             // 
@@ -114,6 +123,7 @@
             this.btn_close.TabIndex = 2;
             this.btn_close.Text = "Thoát";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // txt_begin_date
             // 
@@ -264,48 +274,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lịch hẹn";
             // 
-            // label8
+            // txt_id_house
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(76, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 17);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Địa chỉ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(60, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 17);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Thời gian";
-            // 
-            // txt_meet_phone
-            // 
-            this.txt_meet_phone.Location = new System.Drawing.Point(133, 124);
-            this.txt_meet_phone.Name = "txt_meet_phone";
-            this.txt_meet_phone.ReadOnly = true;
-            this.txt_meet_phone.Size = new System.Drawing.Size(188, 22);
-            this.txt_meet_phone.TabIndex = 3;
-            // 
-            // txt_meet_time
-            // 
-            this.txt_meet_time.Location = new System.Drawing.Point(133, 95);
-            this.txt_meet_time.Name = "txt_meet_time";
-            this.txt_meet_time.ReadOnly = true;
-            this.txt_meet_time.Size = new System.Drawing.Size(188, 22);
-            this.txt_meet_time.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 127);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 17);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Số điện thoại";
+            this.txt_id_house.Location = new System.Drawing.Point(133, 39);
+            this.txt_id_house.Name = "txt_id_house";
+            this.txt_id_house.ReadOnly = true;
+            this.txt_id_house.Size = new System.Drawing.Size(188, 22);
+            this.txt_id_house.TabIndex = 3;
             // 
             // txt_meet_address
             // 
@@ -324,13 +299,48 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "Mã nhà";
             // 
-            // txt_id_house
+            // txt_meet_time
             // 
-            this.txt_id_house.Location = new System.Drawing.Point(133, 39);
-            this.txt_id_house.Name = "txt_id_house";
-            this.txt_id_house.ReadOnly = true;
-            this.txt_id_house.Size = new System.Drawing.Size(188, 22);
-            this.txt_id_house.TabIndex = 3;
+            this.txt_meet_time.Location = new System.Drawing.Point(133, 95);
+            this.txt_meet_time.Name = "txt_meet_time";
+            this.txt_meet_time.ReadOnly = true;
+            this.txt_meet_time.Size = new System.Drawing.Size(188, 22);
+            this.txt_meet_time.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(76, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Địa chỉ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(36, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 17);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Số điện thoại";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(60, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 17);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Thời gian";
+            // 
+            // txt_meet_phone
+            // 
+            this.txt_meet_phone.Location = new System.Drawing.Point(133, 124);
+            this.txt_meet_phone.Name = "txt_meet_phone";
+            this.txt_meet_phone.ReadOnly = true;
+            this.txt_meet_phone.Size = new System.Drawing.Size(188, 22);
+            this.txt_meet_phone.TabIndex = 3;
             // 
             // col_id
             // 
@@ -338,6 +348,30 @@
             this.col_id.HeaderText = "ID";
             this.col_id.Name = "col_id";
             this.col_id.ReadOnly = true;
+            // 
+            // meet_time
+            // 
+            this.meet_time.DataPropertyName = "meet_time";
+            this.meet_time.HeaderText = "Thời gian gặp";
+            this.meet_time.Name = "meet_time";
+            this.meet_time.ReadOnly = true;
+            this.meet_time.Visible = false;
+            // 
+            // meet_address
+            // 
+            this.meet_address.DataPropertyName = "meet_address";
+            this.meet_address.HeaderText = "Địa Chỉ gặp";
+            this.meet_address.Name = "meet_address";
+            this.meet_address.ReadOnly = true;
+            this.meet_address.Visible = false;
+            // 
+            // meet_phone
+            // 
+            this.meet_phone.DataPropertyName = "meet_phone";
+            this.meet_phone.HeaderText = "sdt liên lạc";
+            this.meet_phone.Name = "meet_phone";
+            this.meet_phone.ReadOnly = true;
+            this.meet_phone.Visible = false;
             // 
             // col_address
             // 
@@ -385,18 +419,19 @@
             // 
             // col_is_rented
             // 
+            this.col_is_rented.DataPropertyName = "h_status";
             this.col_is_rented.HeaderText = "Tình trạng";
             this.col_is_rented.Name = "col_is_rented";
             this.col_is_rented.ReadOnly = true;
             // 
-            // col_checkbox_house
+            // col_checkbox_houses
             // 
-            this.col_checkbox_house.FalseValue = "F";
-            this.col_checkbox_house.HeaderText = "Chọn nhà";
-            this.col_checkbox_house.Name = "col_checkbox_house";
-            this.col_checkbox_house.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_checkbox_house.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_checkbox_house.TrueValue = "T";
+            this.col_checkbox_houses.FalseValue = "F";
+            this.col_checkbox_houses.HeaderText = "Chọn nhà";
+            this.col_checkbox_houses.Name = "col_checkbox_houses";
+            this.col_checkbox_houses.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_checkbox_houses.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_checkbox_houses.TrueValue = "T";
             // 
             // fBookingDetail
             // 
@@ -412,6 +447,7 @@
             this.Controls.Add(this.label7);
             this.Name = "fBookingDetail";
             this.Text = "BookingDetail";
+            this.Load += new System.EventHandler(this.fBookingDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listHouseChecked)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -452,6 +488,9 @@
         private System.Windows.Forms.TextBox txt_id_house;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meet_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meet_address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meet_phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_address;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_district;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_area;
@@ -459,6 +498,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_rental;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_owner;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_is_rented;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn col_checkbox_house;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn col_checkbox_houses;
     }
 }

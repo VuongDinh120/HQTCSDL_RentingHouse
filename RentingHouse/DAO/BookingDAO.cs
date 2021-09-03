@@ -36,6 +36,21 @@ namespace RentingHouse.DAO
             return b;
         }
 
+        public float GetBookingLiaFeeById(int id)
+        {
+            Booking b = null;
+
+            string query = string.Format("SELECT * FROM dbo.booking WHERE id = {0}", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                b = new Booking(item);
+                return b.LiabilityFee;
+            }
+            return 0;
+        }
         public DataTable GetBookingByUserId(int id)
         {
             string query = string.Format("SELECT id, begin_date, end_date, received_date, b_status, number_house, liability_fee, rent_fee FROM dbo.booking WHERE b_user_id = {0}", id);

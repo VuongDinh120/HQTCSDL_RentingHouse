@@ -52,9 +52,9 @@ GO
 
 CREATE TABLE booking(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	begin_date datetime,
-	end_date datetime,
-	received_date datetime DEFAULT GETDATE(),
+	begin_date DATE,
+	end_date DATE,
+	received_date DATE DEFAULT GETDATE(),
 	b_status nvarchar(40),
 	number_house int,
 	rent_fee float,
@@ -103,8 +103,8 @@ GO
 CREATE TABLE contracts(
 	house_id INT,
 	c_order int,
-	begin_date datetime,
-	end_date datetime,
+	begin_date DATE,
+	end_date DATE,
 	fee float,
 	CONSTRAINT PK_contract PRIMARY KEY(house_id, c_order)
 )

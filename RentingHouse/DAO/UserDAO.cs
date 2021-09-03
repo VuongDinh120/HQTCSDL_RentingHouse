@@ -63,6 +63,23 @@ namespace RentingHouse.DAO
             return user;
         }
 
+        public float GetUserBalance(int id)
+        {
+            User user = null;
+
+            string query = string.Format("SELECT * FROM dbo.users WHERE id = {0}", id);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                user = new User(item);
+                return user.Balance;
+            }
+            
+            return 0;
+        }
+
         public DataTable GetAllUsers()
         {
             string query = string.Format("SELECT u.id, u.username, u.fullname, u.dob, u.phone, r.r_type FROM dbo.users u JOIN dbo.roles r ON u.role_id = r.id");
