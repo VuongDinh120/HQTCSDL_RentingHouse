@@ -30,7 +30,7 @@ namespace RentingHouse.DTO
             this.UserName = row["username"].ToString().Trim();
             this.Password = row["u_password"].ToString().Trim();
             this.FullName = row["fullname"].ToString().Trim();
-            this.Dob = row["dob"].ToString();
+            this.Dob = row["dob"].ToString().Trim();
             this.Phone = row["phone"].ToString().Trim();
             this.IdCard = row["id_card"].ToString().Trim();
             this.Balance = (float)Convert.ToDouble(row["account_balance"].ToString());

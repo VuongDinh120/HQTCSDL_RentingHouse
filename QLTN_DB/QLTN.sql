@@ -26,7 +26,7 @@ CREATE TABLE users(
 	username nchar(40),
 	u_password nchar(40),
 	fullname nvarchar(40),
-	dob nchar(40),
+	dob DATE,
 	phone nchar(15),
 	id_card nchar(15),
 	account_balance float DEFAULT 0 CHECK (account_balance>=0),
@@ -73,7 +73,7 @@ CREATE TABLE houses(
 	h_add_info nvarchar(100),
 	h_status nvarchar(40),
 	reason nvarchar(40),
-	created_at datetime DEFAULT GETDATE(),
+	created_at DATE DEFAULT GETDATE(),
 	district_id INT,
 	h_user_id INT,
 )

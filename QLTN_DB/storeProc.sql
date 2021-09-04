@@ -117,10 +117,152 @@ END
 GO
 
 --//////////////////////// LOST UPDATE /////////////////////////
+--Transaction1
+CREATE 
+--ALTER
+PROC usp_AcceptHouse @MaThueNha INT, @MaNha INT
+AS
+BEGIN TRAN
+	DECLARE @mataikhoan INT, @phitrachnhiem FLOAT, @sodu FLOAT
+	BEGIN TRY
+	
+	SELECT @mataikhoan=b_user_id, @phitrachnhiem = liability_fee
+	FROM booking
+	WHERE id=@MaThueNha
 
+	SELECT @sodu = account_balance FROM users
+	WHERE id=@mataikhoan
+
+	--ĐỂ TEST
+	WAITFOR DELAY '0:0:10'
+	-------------
+
+	SET @sodu = @sodu + @phitrachnhiem
+	
+	UPDATE booking 
+	SET liability_fee = 0, b_status = N'accepted'
+	WHERE id=@MaThueNha
+
+	UPDATE booking_detail 
+	SET is_rented = 1
+	WHERE booking_id=@MaThueNha AND house_id=@MaNha
+
+	UPDATE users 
+	SET account_balance = @sodu
+	WHERE id=@mataikhoan
+
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0	
+	END CATCH
+COMMIT TRAN
+RETURN 1
+GO
+--Transaction2
+CREATE 
+--ALTER
+PROC usp_DeclineHouse @MaThueNha INT
+AS
+BEGIN TRAN
+	BEGIN TRY
+		DECLARE @mataikhoan INT, @phitrachnhiem FLOAT, @sodu FLOAT
+
+		SELECT @mataikhoan=b_user_id,@phitrachnhiem = liability_fee
+		FROM booking
+		WHERE id=@MaThueNha
+
+		SELECT @sodu=account_balance
+		FROM users
+		WHERE id=@mataikhoan
+
+		--ĐỂ TEST
+		WAITFOR DELAY '0:0:10'
+		-------------
+
+		SET @sodu = @sodu + @phitrachnhiem
+
+		UPDATE booking 
+		SET liability_fee = 0, b_status = N'canceled'
+		WHERE id=@MaThueNha
+
+		UPDATE users 
+		SET account_balance = @sodu
+		WHERE id=@mataikhoan
+
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
+go
 
 --///////////////////////// PHANTOM READ //////////////////////////
+--Transaction1
+CREATE 
+--ALTER
+PROC usp_SelectHouseDetail
+	@MaNha INT
+AS
+BEGIN TRAN
+	BEGIN TRY
+	DECLARE @slgiahan INT
+	SET @slgiahan = (SELECT COUNT(*) FROM contracts WHERE house_id=@MaNha)
 
+	SELECT *, @slgiahan AS SoLanGiaHan
+	FROM houses
+	WHERE id=@MaNha
+
+	--ĐỂ TEST
+	WAITFOR DELAY '0:0:10'
+	-------------
+
+	SELECT * FROM contracts
+	WHERE house_id=@MaNha
+	ORDER BY begin_date 
+
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
+GO
+
+--Transaction2
+CREATE 
+--ALTER
+PROC usp_ExtendContract
+	@MaNha INT,
+	@PhiGiaHan FLOAT
+AS
+BEGIN TRAN
+	BEGIN TRY
+		DECLARE @NgayBD DATE, @NgayKT DATE, @STT INT
+		SET @NgayBD = GETDATE()
+		SET @NgayKT = DATEADD(month, 1, @NgayBD)
+		SET @STT = (SELECT COUNT(*) FROM contracts WHERE house_id=@MaNha)
+
+		INSERT INTO contracts (house_id, c_order, begin_date, end_date, fee)
+		VALUES (@MaNha, @STT + 1, @NgayBD, @NgayKT, @PhiGiaHan)
+
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		SELECT ERROR_MESSAGE() AS ErrorMessage; 
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
+
+go
 
 --/////////////////////////ADDITION///////////////////////////
 --update account info proc
@@ -166,5 +308,3 @@ BEGIN TRAN
 COMMIT TRAN
 RETURN 1
 GO
-
-SELECT bd.*, h.*, d.name AS distric, u.fullname FROM booking_detail bd JOIN houses h ON bd.house_id=h.id JOIN districts d ON d.id = h.district_id JOIN users u ON u.id = h.h_user_id

@@ -33,39 +33,44 @@
             this.txt_detail = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btn_cancel_update = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_accept_update = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txt_reason = new System.Windows.Forms.TextBox();
             this.txt_status = new System.Windows.Forms.TextBox();
-            this.txt_district = new System.Windows.Forms.TextBox();
             this.txt_numberPeople = new System.Windows.Forms.TextBox();
             this.txt_rental = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.txt_area = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_reason = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txt_beginDate = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btn_add_contract = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_contract_status = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_endDate = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.btn_accept_update = new System.Windows.Forms.Button();
-            this.btn_cancel_update = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btn_add_contract = new System.Windows.Forms.Button();
             this.btn_cancel_contract = new System.Windows.Forms.Button();
+            this.txt_endDate = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_beginDate = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
+            this.cb_district = new System.Windows.Forms.ComboBox();
+            this.house_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_begin_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_end_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contract_history)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,6 +79,12 @@
             // dgv_contract_history
             // 
             this.dgv_contract_history.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_contract_history.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.house_id,
+            this.col_order,
+            this.col_begin_date,
+            this.col_end_date,
+            this.col_fee});
             this.dgv_contract_history.Location = new System.Drawing.Point(3, 346);
             this.dgv_contract_history.Name = "dgv_contract_history";
             this.dgv_contract_history.ReadOnly = true;
@@ -83,6 +94,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_district);
             this.groupBox1.Controls.Add(this.txt_detail);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label5);
@@ -98,7 +110,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_reason);
             this.groupBox1.Controls.Add(this.txt_status);
-            this.groupBox1.Controls.Add(this.txt_district);
             this.groupBox1.Controls.Add(this.txt_numberPeople);
             this.groupBox1.Controls.Add(this.txt_rental);
             this.groupBox1.Controls.Add(this.txt_address);
@@ -113,10 +124,9 @@
             // 
             // txt_detail
             // 
-            this.txt_detail.Location = new System.Drawing.Point(697, 58);
+            this.txt_detail.Location = new System.Drawing.Point(697, 38);
             this.txt_detail.Name = "txt_detail";
-            this.txt_detail.ReadOnly = true;
-            this.txt_detail.Size = new System.Drawing.Size(242, 86);
+            this.txt_detail.Size = new System.Drawing.Size(269, 205);
             this.txt_detail.TabIndex = 2;
             this.txt_detail.Text = "";
             // 
@@ -138,6 +148,15 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Số người";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(389, 125);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 17);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Lý do";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -146,6 +165,35 @@
             this.label8.Size = new System.Drawing.Size(73, 17);
             this.label8.TabIndex = 1;
             this.label8.Text = "Tình trạng";
+            // 
+            // btn_cancel_update
+            // 
+            this.btn_cancel_update.Location = new System.Drawing.Point(74, 191);
+            this.btn_cancel_update.Name = "btn_cancel_update";
+            this.btn_cancel_update.Size = new System.Drawing.Size(176, 52);
+            this.btn_cancel_update.TabIndex = 2;
+            this.btn_cancel_update.Text = "Hủy";
+            this.btn_cancel_update.UseVisualStyleBackColor = true;
+            this.btn_cancel_update.Visible = false;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(438, 191);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(176, 52);
+            this.btn_Update.TabIndex = 2;
+            this.btn_Update.Text = "Cập nhật thông tin";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_accept_update
+            // 
+            this.btn_accept_update.Location = new System.Drawing.Point(256, 191);
+            this.btn_accept_update.Name = "btn_accept_update";
+            this.btn_accept_update.Size = new System.Drawing.Size(176, 52);
+            this.btn_accept_update.TabIndex = 2;
+            this.btn_accept_update.Text = "Cập nhật";
+            this.btn_accept_update.UseVisualStyleBackColor = true;
+            this.btn_accept_update.Visible = false;
             // 
             // label3
             // 
@@ -168,7 +216,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(694, 38);
+            this.label10.Location = new System.Drawing.Point(648, 38);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 17);
             this.label10.TabIndex = 1;
@@ -192,6 +240,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             // 
+            // txt_reason
+            // 
+            this.txt_reason.Location = new System.Drawing.Point(438, 122);
+            this.txt_reason.Name = "txt_reason";
+            this.txt_reason.ReadOnly = true;
+            this.txt_reason.Size = new System.Drawing.Size(176, 22);
+            this.txt_reason.TabIndex = 0;
+            // 
             // txt_status
             // 
             this.txt_status.Location = new System.Drawing.Point(438, 94);
@@ -200,19 +256,10 @@
             this.txt_status.Size = new System.Drawing.Size(176, 22);
             this.txt_status.TabIndex = 0;
             // 
-            // txt_district
-            // 
-            this.txt_district.Location = new System.Drawing.Point(438, 66);
-            this.txt_district.Name = "txt_district";
-            this.txt_district.ReadOnly = true;
-            this.txt_district.Size = new System.Drawing.Size(176, 22);
-            this.txt_district.TabIndex = 0;
-            // 
             // txt_numberPeople
             // 
             this.txt_numberPeople.Location = new System.Drawing.Point(104, 122);
             this.txt_numberPeople.Name = "txt_numberPeople";
-            this.txt_numberPeople.ReadOnly = true;
             this.txt_numberPeople.Size = new System.Drawing.Size(176, 22);
             this.txt_numberPeople.TabIndex = 0;
             // 
@@ -220,7 +267,6 @@
             // 
             this.txt_rental.Location = new System.Drawing.Point(104, 94);
             this.txt_rental.Name = "txt_rental";
-            this.txt_rental.ReadOnly = true;
             this.txt_rental.Size = new System.Drawing.Size(176, 22);
             this.txt_rental.TabIndex = 0;
             // 
@@ -228,7 +274,6 @@
             // 
             this.txt_address.Location = new System.Drawing.Point(438, 38);
             this.txt_address.Name = "txt_address";
-            this.txt_address.ReadOnly = true;
             this.txt_address.Size = new System.Drawing.Size(176, 22);
             this.txt_address.TabIndex = 0;
             // 
@@ -236,7 +281,6 @@
             // 
             this.txt_area.Location = new System.Drawing.Point(104, 66);
             this.txt_area.Name = "txt_area";
-            this.txt_area.ReadOnly = true;
             this.txt_area.Size = new System.Drawing.Size(176, 22);
             this.txt_area.TabIndex = 0;
             // 
@@ -256,23 +300,6 @@
             this.label1.Size = new System.Drawing.Size(177, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Thông tin hợp đồng chi tiết";
-            // 
-            // txt_reason
-            // 
-            this.txt_reason.Location = new System.Drawing.Point(438, 122);
-            this.txt_reason.Name = "txt_reason";
-            this.txt_reason.ReadOnly = true;
-            this.txt_reason.Size = new System.Drawing.Size(176, 22);
-            this.txt_reason.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(389, 125);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 17);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Lý do";
             // 
             // label7
             // 
@@ -303,41 +330,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tình trạng hợp đồng";
             // 
-            // txt_beginDate
-            // 
-            this.txt_beginDate.Location = new System.Drawing.Point(21, 61);
-            this.txt_beginDate.Name = "txt_beginDate";
-            this.txt_beginDate.ReadOnly = true;
-            this.txt_beginDate.Size = new System.Drawing.Size(176, 22);
-            this.txt_beginDate.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 41);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 17);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Ngày bắt đầu";
-            // 
-            // btn_add_contract
-            // 
-            this.btn_add_contract.Location = new System.Drawing.Point(235, 154);
-            this.btn_add_contract.Name = "btn_add_contract";
-            this.btn_add_contract.Size = new System.Drawing.Size(176, 52);
-            this.btn_add_contract.TabIndex = 2;
-            this.btn_add_contract.Text = "Gia hạn";
-            this.btn_add_contract.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 182);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 17);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Phí gia hạn:";
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -355,22 +347,14 @@
             this.txt_contract_status.Size = new System.Drawing.Size(176, 22);
             this.txt_contract_status.TabIndex = 5;
             // 
-            // label15
+            // label17
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(232, 41);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 17);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Ngày kết thúc";
-            // 
-            // txt_endDate
-            // 
-            this.txt_endDate.Location = new System.Drawing.Point(235, 61);
-            this.txt_endDate.Name = "txt_endDate";
-            this.txt_endDate.ReadOnly = true;
-            this.txt_endDate.Size = new System.Drawing.Size(176, 22);
-            this.txt_endDate.TabIndex = 0;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(18, 154);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(181, 17);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Thời gian hiệu lực: 30 Ngày";
             // 
             // label16
             // 
@@ -381,43 +365,24 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "Money";
             // 
-            // label17
+            // label12
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 154);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(181, 17);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Thời gian hiệu lực: 30 Ngày";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 182);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 17);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Phí gia hạn:";
             // 
-            // btn_accept_update
+            // btn_add_contract
             // 
-            this.btn_accept_update.Location = new System.Drawing.Point(256, 191);
-            this.btn_accept_update.Name = "btn_accept_update";
-            this.btn_accept_update.Size = new System.Drawing.Size(176, 52);
-            this.btn_accept_update.TabIndex = 2;
-            this.btn_accept_update.Text = "Cập nhật";
-            this.btn_accept_update.UseVisualStyleBackColor = true;
-            this.btn_accept_update.Visible = false;
-            // 
-            // btn_cancel_update
-            // 
-            this.btn_cancel_update.Location = new System.Drawing.Point(74, 191);
-            this.btn_cancel_update.Name = "btn_cancel_update";
-            this.btn_cancel_update.Size = new System.Drawing.Size(176, 52);
-            this.btn_cancel_update.TabIndex = 2;
-            this.btn_cancel_update.Text = "Hủy";
-            this.btn_cancel_update.UseVisualStyleBackColor = true;
-            this.btn_cancel_update.Visible = false;
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(438, 191);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(176, 52);
-            this.btn_Update.TabIndex = 2;
-            this.btn_Update.Text = "Cập nhật thông tin";
-            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_add_contract.Location = new System.Drawing.Point(235, 154);
+            this.btn_add_contract.Name = "btn_add_contract";
+            this.btn_add_contract.Size = new System.Drawing.Size(176, 52);
+            this.btn_add_contract.TabIndex = 2;
+            this.btn_add_contract.Text = "Gia hạn";
+            this.btn_add_contract.UseVisualStyleBackColor = true;
+            this.btn_add_contract.Click += new System.EventHandler(this.btn_add_contract_Click);
             // 
             // btn_cancel_contract
             // 
@@ -428,6 +393,40 @@
             this.btn_cancel_contract.Text = "Hủy bỏ hợp đồng";
             this.btn_cancel_contract.UseVisualStyleBackColor = true;
             // 
+            // txt_endDate
+            // 
+            this.txt_endDate.Location = new System.Drawing.Point(235, 61);
+            this.txt_endDate.Name = "txt_endDate";
+            this.txt_endDate.ReadOnly = true;
+            this.txt_endDate.Size = new System.Drawing.Size(176, 22);
+            this.txt_endDate.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(232, 41);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 17);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Ngày kết thúc";
+            // 
+            // txt_beginDate
+            // 
+            this.txt_beginDate.Location = new System.Drawing.Point(21, 61);
+            this.txt_beginDate.Name = "txt_beginDate";
+            this.txt_beginDate.ReadOnly = true;
+            this.txt_beginDate.Size = new System.Drawing.Size(176, 22);
+            this.txt_beginDate.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(18, 41);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Ngày bắt đầu";
+            // 
             // btn_close
             // 
             this.btn_close.Location = new System.Drawing.Point(12, 568);
@@ -436,6 +435,51 @@
             this.btn_close.TabIndex = 2;
             this.btn_close.Text = "Thoát";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // cb_district
+            // 
+            this.cb_district.FormattingEnabled = true;
+            this.cb_district.Location = new System.Drawing.Point(438, 66);
+            this.cb_district.Name = "cb_district";
+            this.cb_district.Size = new System.Drawing.Size(176, 24);
+            this.cb_district.TabIndex = 3;
+            // 
+            // house_id
+            // 
+            this.house_id.DataPropertyName = "house_id";
+            this.house_id.HeaderText = "Mã nhà";
+            this.house_id.Name = "house_id";
+            this.house_id.ReadOnly = true;
+            this.house_id.Visible = false;
+            // 
+            // col_order
+            // 
+            this.col_order.DataPropertyName = "c_order";
+            this.col_order.HeaderText = "Lần thứ";
+            this.col_order.Name = "col_order";
+            this.col_order.ReadOnly = true;
+            // 
+            // col_begin_date
+            // 
+            this.col_begin_date.DataPropertyName = "begin_date";
+            this.col_begin_date.HeaderText = "Ngày bắt đầu";
+            this.col_begin_date.Name = "col_begin_date";
+            this.col_begin_date.ReadOnly = true;
+            // 
+            // col_end_date
+            // 
+            this.col_end_date.DataPropertyName = "end_date";
+            this.col_end_date.HeaderText = "Ngày kết thúc";
+            this.col_end_date.Name = "col_end_date";
+            this.col_end_date.ReadOnly = true;
+            // 
+            // col_fee
+            // 
+            this.col_fee.DataPropertyName = "fee";
+            this.col_fee.HeaderText = "Phí giới thiệu";
+            this.col_fee.Name = "col_fee";
+            this.col_fee.ReadOnly = true;
             // 
             // fContractDetail
             // 
@@ -450,6 +494,7 @@
             this.Controls.Add(this.btn_close);
             this.Name = "fContractDetail";
             this.Text = "fContractDetail";
+            this.Load += new System.EventHandler(this.fContractDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contract_history)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -474,7 +519,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_status;
-        private System.Windows.Forms.TextBox txt_district;
         private System.Windows.Forms.TextBox txt_numberPeople;
         private System.Windows.Forms.TextBox txt_rental;
         private System.Windows.Forms.TextBox txt_address;
@@ -500,5 +544,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_cancel_contract;
         private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.ComboBox cb_district;
+        private System.Windows.Forms.DataGridViewTextBoxColumn house_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_order;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_begin_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_end_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fee;
     }
 }

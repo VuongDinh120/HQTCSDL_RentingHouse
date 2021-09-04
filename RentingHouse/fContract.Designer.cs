@@ -130,7 +130,7 @@
             // 
             // col_status
             // 
-            this.col_status.DataPropertyName = "b_status";
+            this.col_status.DataPropertyName = "h_status";
             this.col_status.FillWeight = 111.6622F;
             this.col_status.HeaderText = "Trạng thái";
             this.col_status.Name = "col_status";

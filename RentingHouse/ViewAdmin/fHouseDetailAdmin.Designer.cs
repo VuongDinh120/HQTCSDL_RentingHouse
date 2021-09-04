@@ -54,6 +54,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgv_contract = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contract)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +97,7 @@
             // 
             // txt_description
             // 
-            this.txt_description.Location = new System.Drawing.Point(130, 255);
+            this.txt_description.Location = new System.Drawing.Point(130, 186);
             this.txt_description.Name = "txt_description";
             this.txt_description.Size = new System.Drawing.Size(551, 119);
             this.txt_description.TabIndex = 30;
@@ -131,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 255);
+            this.label2.Location = new System.Drawing.Point(78, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
             this.label2.TabIndex = 28;
@@ -176,9 +178,9 @@
             // 
             // txt_owner
             // 
-            this.txt_owner.Location = new System.Drawing.Point(130, 186);
+            this.txt_owner.Location = new System.Drawing.Point(422, 127);
             this.txt_owner.Name = "txt_owner";
-            this.txt_owner.Size = new System.Drawing.Size(184, 22);
+            this.txt_owner.Size = new System.Drawing.Size(259, 22);
             this.txt_owner.TabIndex = 23;
             // 
             // txt_address
@@ -190,14 +192,14 @@
             // 
             // txt_status
             // 
-            this.txt_status.Location = new System.Drawing.Point(422, 158);
+            this.txt_status.Location = new System.Drawing.Point(130, 331);
             this.txt_status.Name = "txt_status";
-            this.txt_status.Size = new System.Drawing.Size(259, 22);
+            this.txt_status.Size = new System.Drawing.Size(184, 22);
             this.txt_status.TabIndex = 21;
             // 
             // txt_reason
             // 
-            this.txt_reason.Location = new System.Drawing.Point(422, 186);
+            this.txt_reason.Location = new System.Drawing.Point(422, 331);
             this.txt_reason.Name = "txt_reason";
             this.txt_reason.Size = new System.Drawing.Size(259, 22);
             this.txt_reason.TabIndex = 20;
@@ -221,7 +223,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(373, 189);
+            this.label8.Location = new System.Drawing.Point(373, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 17);
             this.label8.TabIndex = 27;
@@ -230,7 +232,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(343, 161);
+            this.label10.Location = new System.Drawing.Point(51, 334);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 26;
@@ -239,7 +241,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(60, 189);
+            this.label11.Location = new System.Drawing.Point(352, 130);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 17);
             this.label11.TabIndex = 25;
@@ -273,6 +275,23 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Lịch sử gia hạn";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(130, 359);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(184, 22);
+            this.textBox1.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(28, 364);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 17);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Số lần gia hạn";
+            // 
             // fHouseDetailAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,6 +309,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_district);
             this.Controls.Add(this.txt_reason);
@@ -298,6 +318,7 @@
             this.Controls.Add(this.txt_address);
             this.Controls.Add(this.txt_rental);
             this.Controls.Add(this.txt_owner);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.txt_area);
             this.Controls.Add(this.btn_delete);
@@ -340,5 +361,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgv_contract;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
     }
 }
