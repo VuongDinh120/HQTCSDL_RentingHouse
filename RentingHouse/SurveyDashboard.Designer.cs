@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSurvey = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlSurveys = new System.Windows.Forms.Panel();
-            this.btnSurvey = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 577);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSurvey
+            // 
+            this.btnSurvey.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSurvey.FlatAppearance.BorderSize = 0;
+            this.btnSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSurvey.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSurvey.Location = new System.Drawing.Point(0, 144);
+            this.btnSurvey.Name = "btnSurvey";
+            this.btnSurvey.Size = new System.Drawing.Size(186, 42);
+            this.btnSurvey.TabIndex = 2;
+            this.btnSurvey.Text = "Khảo sát";
+            this.btnSurvey.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -117,20 +131,6 @@
             this.pnlSurveys.Size = new System.Drawing.Size(1055, 477);
             this.pnlSurveys.TabIndex = 1;
             // 
-            // btnSurvey
-            // 
-            this.btnSurvey.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSurvey.FlatAppearance.BorderSize = 0;
-            this.btnSurvey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSurvey.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSurvey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSurvey.Location = new System.Drawing.Point(0, 144);
-            this.btnSurvey.Name = "btnSurvey";
-            this.btnSurvey.Size = new System.Drawing.Size(186, 42);
-            this.btnSurvey.TabIndex = 2;
-            this.btnSurvey.Text = "Khảo sát";
-            this.btnSurvey.UseVisualStyleBackColor = true;
-            // 
             // SurveyDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +139,7 @@
             this.ClientSize = new System.Drawing.Size(1241, 577);
             this.Controls.Add(this.pnlSurveys);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SurveyDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMain";
