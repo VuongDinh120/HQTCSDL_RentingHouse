@@ -37,6 +37,12 @@ namespace RentingHouse.DAO
             return districtname.Name;
         }
 
+        public DataTable GetAllDistrict()
+        {
+            string query = string.Format("SELECT * FROM dbo.districts");
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public int InsertDistrict(string name)
         {
             string query = string.Format("INSERT INTO dbo.districts(name) VALUES({0})", name);

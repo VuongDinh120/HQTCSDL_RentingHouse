@@ -26,10 +26,10 @@ CREATE TABLE users(
 	username nchar(40),
 	u_password nchar(40),
 	fullname nvarchar(40),
-	dob nchar(40),
+	dob DATE,
 	phone nchar(15),
 	id_card nchar(15),
-	account_balance float,
+	account_balance float DEFAULT 0 CHECK (account_balance>=0),
 	role_id INT
 )
 GO
@@ -37,7 +37,7 @@ GO
 CREATE TABLE fees(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	name nvarchar(40),
-	price float
+	price float CHECK (price>=0)
 )
 GO
 
@@ -52,9 +52,9 @@ GO
 
 CREATE TABLE booking(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	begin_date datetime,
-	end_date datetime,
-	received_date datetime DEFAULT GETDATE(),
+	begin_date DATE,
+	end_date DATE,
+	received_date DATE DEFAULT GETDATE(),
 	b_status nvarchar(40),
 	number_house int,
 	rent_fee float,
@@ -73,7 +73,7 @@ CREATE TABLE houses(
 	h_add_info nvarchar(100),
 	h_status nvarchar(40),
 	reason nvarchar(40),
-	created_at datetime DEFAULT GETDATE(),
+	created_at DATE DEFAULT GETDATE(),
 	district_id INT,
 	h_user_id INT,
 )
@@ -103,8 +103,8 @@ GO
 CREATE TABLE contracts(
 	house_id INT,
 	c_order int,
-	begin_date datetime,
-	end_date datetime,
+	begin_date DATE,
+	end_date DATE,
 	fee float,
 	CONSTRAINT PK_contract PRIMARY KEY(house_id, c_order)
 )

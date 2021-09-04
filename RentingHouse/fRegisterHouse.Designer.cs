@@ -33,16 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_district = new System.Windows.Forms.TextBox();
             this.txt_numberPeople = new System.Windows.Forms.TextBox();
             this.txt_rental = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.txt_area = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_register = new System.Windows.Forms.Button();
+            this.txt_description = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.cb_district = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label9
@@ -90,62 +90,51 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Địa chỉ";
             // 
-            // txt_district
-            // 
-            this.txt_district.Location = new System.Drawing.Point(266, 141);
-            this.txt_district.Name = "txt_district";
-            this.txt_district.ReadOnly = true;
-            this.txt_district.Size = new System.Drawing.Size(176, 22);
-            this.txt_district.TabIndex = 4;
-            // 
             // txt_numberPeople
             // 
             this.txt_numberPeople.Location = new System.Drawing.Point(266, 225);
             this.txt_numberPeople.Name = "txt_numberPeople";
-            this.txt_numberPeople.ReadOnly = true;
-            this.txt_numberPeople.Size = new System.Drawing.Size(176, 22);
+            this.txt_numberPeople.Size = new System.Drawing.Size(237, 22);
             this.txt_numberPeople.TabIndex = 5;
             // 
             // txt_rental
             // 
             this.txt_rental.Location = new System.Drawing.Point(266, 197);
             this.txt_rental.Name = "txt_rental";
-            this.txt_rental.ReadOnly = true;
-            this.txt_rental.Size = new System.Drawing.Size(176, 22);
+            this.txt_rental.Size = new System.Drawing.Size(237, 22);
             this.txt_rental.TabIndex = 6;
             // 
             // txt_address
             // 
             this.txt_address.Location = new System.Drawing.Point(266, 113);
             this.txt_address.Name = "txt_address";
-            this.txt_address.ReadOnly = true;
-            this.txt_address.Size = new System.Drawing.Size(176, 22);
+            this.txt_address.Size = new System.Drawing.Size(237, 22);
             this.txt_address.TabIndex = 7;
             // 
             // txt_area
             // 
             this.txt_area.Location = new System.Drawing.Point(266, 169);
             this.txt_area.Name = "txt_area";
-            this.txt_area.ReadOnly = true;
-            this.txt_area.Size = new System.Drawing.Size(176, 22);
+            this.txt_area.Size = new System.Drawing.Size(237, 22);
             this.txt_area.TabIndex = 8;
             // 
-            // button1
+            // btn_register
             // 
-            this.button1.Location = new System.Drawing.Point(748, 334);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 43);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Đăng ký";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_register.Location = new System.Drawing.Point(848, 381);
+            this.btn_register.Name = "btn_register";
+            this.btn_register.Size = new System.Drawing.Size(158, 43);
+            this.btn_register.TabIndex = 17;
+            this.btn_register.Text = "Đăng ký";
+            this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
-            // richTextBox1
+            // txt_description
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(645, 113);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(261, 129);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
+            this.txt_description.Location = new System.Drawing.Point(645, 113);
+            this.txt_description.Name = "txt_description";
+            this.txt_description.Size = new System.Drawing.Size(474, 129);
+            this.txt_description.TabIndex = 18;
+            this.txt_description.Text = "";
             // 
             // label1
             // 
@@ -159,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(745, 304);
+            this.label2.Location = new System.Drawing.Point(845, 351);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 11;
@@ -168,11 +157,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(840, 304);
+            this.label7.Location = new System.Drawing.Point(940, 351);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Money";
+            // 
+            // cb_district
+            // 
+            this.cb_district.FormattingEnabled = true;
+            this.cb_district.Location = new System.Drawing.Point(266, 141);
+            this.cb_district.Name = "cb_district";
+            this.cb_district.Size = new System.Drawing.Size(237, 24);
+            this.cb_district.TabIndex = 19;
             // 
             // fRegisterHouse
             // 
@@ -180,8 +177,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1131, 477);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cb_district);
+            this.Controls.Add(this.txt_description);
+            this.Controls.Add(this.btn_register);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
@@ -190,7 +188,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_district);
             this.Controls.Add(this.txt_numberPeople);
             this.Controls.Add(this.txt_rental);
             this.Controls.Add(this.txt_address);
@@ -212,15 +209,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_district;
         private System.Windows.Forms.TextBox txt_numberPeople;
         private System.Windows.Forms.TextBox txt_rental;
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.TextBox txt_area;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btn_register;
+        private System.Windows.Forms.RichTextBox txt_description;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cb_district;
     }
 }

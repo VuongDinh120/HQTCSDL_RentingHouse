@@ -32,7 +32,19 @@ namespace RentingHouse
 
         private void fSurveys_Load(object sender, EventArgs e)
         {
-            dgvSurveys.DataSource = SurveyDAO.Instance.GetAllSurveys();
+            dgvSurveys.DataSource = SurveyDAO.Instance.GetAllHousesNotSurveys();
+        }
+
+        private void dgvSurveys_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int id = (int)dgvSurveys.Rows[e.RowIndex].Cells[0].Value;
+                new fSurveyHouses(id).Show();
+            }
         }
     }
 }

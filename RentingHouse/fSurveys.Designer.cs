@@ -30,14 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSurveys = new System.Windows.Forms.DataGridView();
-            this.btnCreateSurvey = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.house_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s_user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_district_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_btn_houses = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSurveys)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,80 +69,100 @@
             this.dgvSurveys.ColumnHeadersHeight = 40;
             this.dgvSurveys.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvSurveys.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.detail,
-            this.s_status,
-            this.house_id,
-            this.s_user_id});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSurveys.DefaultCellStyle = dataGridViewCellStyle3;
+            this.col_id,
+            this.col_address,
+            this.col_district_name,
+            this.col_area,
+            this.owner,
+            this.col_status,
+            this.col_btn_houses});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSurveys.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSurveys.EnableHeadersVisualStyles = false;
-            this.dgvSurveys.Location = new System.Drawing.Point(9, 49);
-            this.dgvSurveys.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvSurveys.Location = new System.Drawing.Point(12, 61);
             this.dgvSurveys.Name = "dgvSurveys";
             this.dgvSurveys.RowHeadersVisible = false;
             this.dgvSurveys.RowTemplate.Height = 50;
             this.dgvSurveys.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSurveys.Size = new System.Drawing.Size(830, 329);
-            this.dgvSurveys.TabIndex = 6;
+            this.dgvSurveys.Size = new System.Drawing.Size(1107, 405);
+            this.dgvSurveys.TabIndex = 8;
+            this.dgvSurveys.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSurveys_CellContentClick);
             // 
-            // btnCreateSurvey
+            // col_id
             // 
-            this.btnCreateSurvey.Location = new System.Drawing.Point(713, 11);
-            this.btnCreateSurvey.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCreateSurvey.Name = "btnCreateSurvey";
-            this.btnCreateSurvey.Size = new System.Drawing.Size(104, 22);
-            this.btnCreateSurvey.TabIndex = 7;
-            this.btnCreateSurvey.Text = "Tạo khảo sát";
-            this.btnCreateSurvey.UseVisualStyleBackColor = true;
+            this.col_id.DataPropertyName = "id";
+            this.col_id.FillWeight = 31.49759F;
+            this.col_id.HeaderText = "ID";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
             // 
-            // ID
+            // col_address
             // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "id";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
+            this.col_address.DataPropertyName = "h_address";
+            this.col_address.FillWeight = 177.665F;
+            this.col_address.HeaderText = "Địa chỉ";
+            this.col_address.Name = "col_address";
+            this.col_address.ReadOnly = true;
             // 
-            // detail
+            // col_district_name
             // 
-            this.detail.DataPropertyName = "detail";
-            this.detail.HeaderText = "Chi tiết";
-            this.detail.Name = "detail";
+            this.col_district_name.DataPropertyName = "district";
+            this.col_district_name.FillWeight = 98.16749F;
+            this.col_district_name.HeaderText = "Quận";
+            this.col_district_name.Name = "col_district_name";
+            this.col_district_name.ReadOnly = true;
             // 
-            // s_status
+            // col_area
             // 
-            this.s_status.DataPropertyName = "s_status";
-            this.s_status.HeaderText = "Trạng thái";
-            this.s_status.Name = "s_status";
+            this.col_area.DataPropertyName = "area";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.col_area.DefaultCellStyle = dataGridViewCellStyle3;
+            this.col_area.FillWeight = 98.16749F;
+            this.col_area.HeaderText = "Diện tích";
+            this.col_area.Name = "col_area";
+            this.col_area.ReadOnly = true;
             // 
-            // house_id
+            // owner
             // 
-            this.house_id.DataPropertyName = "h_address";
-            this.house_id.HeaderText = "Địa chỉ";
-            this.house_id.Name = "house_id";
+            this.owner.DataPropertyName = "fullname";
+            this.owner.FillWeight = 98.16749F;
+            this.owner.HeaderText = "Chủ nhà";
+            this.owner.Name = "owner";
+            this.owner.ReadOnly = true;
             // 
-            // s_user_id
+            // col_status
             // 
-            this.s_user_id.DataPropertyName = "fullname";
-            this.s_user_id.HeaderText = "Người cho thuê";
-            this.s_user_id.Name = "s_user_id";
+            this.col_status.DataPropertyName = "h_status";
+            this.col_status.FillWeight = 98.16749F;
+            this.col_status.HeaderText = "Trạng thái";
+            this.col_status.Name = "col_status";
+            this.col_status.ReadOnly = true;
+            // 
+            // col_btn_houses
+            // 
+            this.col_btn_houses.FillWeight = 98.16749F;
+            this.col_btn_houses.HeaderText = "Khảo sát";
+            this.col_btn_houses.Name = "col_btn_houses";
+            this.col_btn_houses.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_btn_houses.Text = "Tạo";
+            this.col_btn_houses.UseColumnTextForButtonValue = true;
             // 
             // fSurveys
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(848, 388);
-            this.Controls.Add(this.btnCreateSurvey);
+            this.ClientSize = new System.Drawing.Size(1131, 478);
             this.Controls.Add(this.dgvSurveys);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fSurveys";
             this.Text = "fSurveys";
             this.Load += new System.EventHandler(this.fSurveys_Load);
@@ -152,11 +174,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvSurveys;
-        private System.Windows.Forms.Button btnCreateSurvey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn house_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s_user_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_district_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn owner;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_status;
+        private System.Windows.Forms.DataGridViewButtonColumn col_btn_houses;
     }
 }

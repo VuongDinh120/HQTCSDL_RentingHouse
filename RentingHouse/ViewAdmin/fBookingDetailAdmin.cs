@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace RentingHouse
 {
-    public partial class Form1 : Form
+    public partial class fBookingDetailAdmin : Form
     {
-        public Form1()
+        private int bookingId;
+
+        public int BookingId
+        {
+            get { return bookingId; }
+            set { bookingId = value; }
+        }
+
+        public fBookingDetailAdmin(int id)
         {
             InitializeComponent();
+            BookingId = id;
         }
     }
 }

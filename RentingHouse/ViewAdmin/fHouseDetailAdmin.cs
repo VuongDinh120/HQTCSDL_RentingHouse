@@ -8,17 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//Khai báo sử dụng lớp
-using RentingHouse.DAO;
-using RentingHouse.DTO;
-
 namespace RentingHouse
 {
-    public partial class Login : Form
+    public partial class fHouseDetailAdmin : Form
     {
-        public Login()
+        private int housesId;
+
+        public int HousesId
+        {
+            get { return housesId; }
+            set { housesId = value; }
+        }
+        public fHouseDetailAdmin(int ID)
         {
             InitializeComponent();
+            HousesId = ID;
         }
     }
 }
